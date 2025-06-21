@@ -3,7 +3,7 @@
 header {
     display: flex;
     height: 10vh;
-    background-color: v.$head-foot-bg-color;
+    background-color: v.$header-bg;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -22,9 +22,160 @@ header {
     display: flex;
     gap: 2vw;
     align-items: center;
+    font-size: 2.3vw;
 }
 
 .sign-in-icon, .cart-icon, .fav-icon, .lang-icon {
     height: 4vh;
     width: auto;  
+}
+
+.header-line {
+    position: absolute;
+    height: 0.2vh;
+    width: 100%;
+    bottom: 0.7vh;
+    background-color: #000000;
+    border: none;
+    left: 0;
+}
+
+footer {
+    position: relative;
+    display: grid;
+    font-size: 1vw;
+    font-weight: 300;
+    background-color: v.$footer-bg;
+    bottom: 0;
+    width: 100%;
+    grid-template-columns: 35% auto;
+    grid-template-rows: auto auto auto;
+    gap: 3vh;
+}
+
+.refs {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.refs ul {
+    list-style-type: square;
+    color: #000000;
+    padding-left: 2.5rem;
+}
+
+.networks {
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.networks-content > p {
+    margin-left: 4%;
+    margin-bottom: 0.2vw;
+}
+
+.network-icon {
+    height: 5.5vh;
+    width: auto;
+}
+
+.netw-icons-wrapper {
+    margin-left: 0.8vw;
+}
+
+.contacts {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.contacts-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "heading heading heading"
+    "kyivstar vodafone lifecell"
+    "map-point map-point map-point";
+    place-items: center;
+    height: 4.2vw;
+    width: 40vw;
+}
+
+.kyivstar, .vodafone, .lifecell, .map-point-wrapper {
+    display: flex;
+    margin-left: 1vw;
+}
+
+.contacts-heading {
+    grid-area: heading;
+}
+
+.kyivstar {
+    grid-area: kyivstar;
+}
+
+.vodafone {
+    grid-area: vodafone;
+}
+
+.lifecell {
+    grid-area: lifecell;
+}
+
+.map-point-wrapper {
+    grid-area: map-point;
+}
+
+.operators {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+
+.partners {
+    display: grid;
+    grid-column: span 2;
+    justify-content: center;
+}
+
+.partners > p {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 0.2vw;
+}
+
+.operator-icon {
+    height: 2vh;
+    width: auto; 
+}
+
+.map-point-wrapper {
+    height: 2vh;
+    width: auto; 
+}
+
+.partners-icon {
+    height: 7vh;
+    width: auto;  
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-line {
+    height: 0.2vh;
+    width: 98vw;
+    background-color: #000000;
+    border: none;
+    margin-left: 2vh;
+}
+
+.footer-final-text {
+    left: 0;
+    margin: 2vh;
 }
