@@ -3,21 +3,28 @@ header {
   height: 10vh;
   background-color: #B4B4B4;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  padding: 0 3vw;
 }
 
 .logo {
-  max-height: 40%;
-  max-width: 40%;
-  margin-right: 64%;
+  height: 4vh;
+  width: auto;
 }
 
 .header-nav {
+  margin-left: auto;
   display: flex;
   gap: 2vw;
-  max-height: 36%;
-  max-width: 36%;
-  justify-content: flex-end;
-  margin-left: 1vw;
+  align-items: center;
+}
+
+.sign-in-icon, .cart-icon, .fav-icon, .lang-icon {
+  height: 4vh;
+  width: auto;
 }
 
 /*# sourceMappingURL=main-page.css.map */
