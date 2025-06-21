@@ -1,0 +1,23 @@
+@use 'variables' as v;
+
+header {
+    display: flex;
+    height: 10vh;
+    background-color: v.$head-foot-bg-color;
+    align-items: center;
+}
+
+.logo {
+    max-height: 40%;
+    max-width: 40%;
+    margin-right: 64%;
+}
+
+.header-nav {
+    display: flex;
+    gap: 2vw;
+    max-height: 36%;
+    max-width: 36%;
+    justify-content: flex-end;
+    margin-left: 1vw;
+}
