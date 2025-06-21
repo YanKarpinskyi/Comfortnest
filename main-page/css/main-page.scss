@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 header {
     display: flex;
@@ -13,8 +14,7 @@ header {
 }
 
 .logo {
-    height: 4vh;
-    width: auto; 
+    @include m.adaptive-img(4vh);
 }
 
 .header-nav {
@@ -26,22 +26,18 @@ header {
 }
 
 .sign-in-icon, .cart-icon, .fav-icon, .lang-icon {
-    height: 4vh;
-    width: auto;  
+    @include m.adaptive-img(4vh);
 }
 
 .header-line {
+    @include m.hr-line(100%);
     position: absolute;
-    height: 0.2vh;
-    width: 100%;
     bottom: 0.7vh;
-    background-color: #000000;
-    border: none;
     left: 0;
 }
 
 footer {
-    position: relative;
+    position: absolute;
     display: grid;
     font-size: 1vw;
     font-weight: 300;
@@ -54,9 +50,8 @@ footer {
 }
 
 .refs {
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
+    @include m.grid-area(1, 1);
+    margin-top: 3vh;
 }
 
 .refs ul {
@@ -66,9 +61,7 @@ footer {
 }
 
 .networks {
-    display: grid;
-    grid-column: 1;
-    grid-row: 2;
+    @include m.grid-area(1, 2);
 }
 
 .networks-content > p {
@@ -86,9 +79,7 @@ footer {
 }
 
 .contacts {
-    display: grid;
-    grid-column: 2;
-    grid-row: 2;
+    @include m.grid-area(2, 2);
 }
 
 .contacts-content {
@@ -126,6 +117,7 @@ footer {
 }
 
 .map-point-wrapper {
+    @include m.adaptive-img(2vh);
     grid-area: map-point;
 }
 
@@ -148,18 +140,11 @@ footer {
 }
 
 .operator-icon {
-    height: 2vh;
-    width: auto; 
-}
-
-.map-point-wrapper {
-    height: 2vh;
-    width: auto; 
+    @include m.adaptive-img(2vh);
 }
 
 .partners-icon {
-    height: 7vh;
-    width: auto;  
+    @include m.adaptive-img(7vh);
 }
 
 .footer-bottom {
@@ -168,11 +153,7 @@ footer {
 }
 
 .footer-line {
-    height: 0.2vh;
-    width: 98vw;
-    background-color: #000000;
-    border: none;
-    margin-left: 2vh;
+    @include m.hr-line(98vw, 2vh);
 }
 
 .footer-final-text {

@@ -1,0 +1,17 @@
+@mixin adaptive-img($height) {
+    height: $height;
+    width: auto;
+}
+
+@mixin grid-area($column, $row) {
+    grid-column: $column;
+    grid-row: $row;
+}
+
+@mixin hr-line($width, $margin-left: 0) {
+    height: 0.2vh;
+    width: $width;
+    background-color: #000000;
+    border: none;
+    margin-left: $margin-left;
+}
