@@ -38,7 +38,7 @@ header {
 }
 
 main {
-    margin-top: 10vh;
+    margin-top: 12vh;
 }
 
 .ware-search {
@@ -158,6 +158,89 @@ main {
     @include m.adaptive-img(6.3vh);
     display: block;
     cursor: pointer;
+}
+
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-template-rows: repeat(3, 42vh);
+    margin: 5% 5% 5% 15%;
+    width: 70vw;
+    height: 90vh;
+    gap: 5vh;
+    margin-bottom: 700px;
+}
+
+.promo-text {
+    font-size: 6vh;
+    font-weight: 600;
+    color: #DB5151;
+    text-align: center;
+    grid-column: span 2;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #C5C5C5;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.ware-img {
+    width: 100%;
+    height: 70%; 
+    object-fit: contain;
+    display: block;
+}
+
+.ware-card-info {
+    margin: 1vw 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ware-name, .ware-card-descr p {
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* для кращої сумісності */
+    hyphens: auto; /* для автоматичного переносу слів, якщо підтримується */
+}
+
+.ware-name {
+    font-weight: bold;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.ware-card-descr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.7vw;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5vw;
+}
+
+.star {
+    @include m.adaptive-img(2vh); // Зменшено для адаптивності
+}
+
+.grade {
+    font-size: 1.2vw;
+}
+
+.fav-icon-card {
+    @include m.adaptive-img(2.5vh); // Зменшено для адаптивності
+    cursor: pointer;
+    margin-right: 0.5vw;
 }
 
 footer {
