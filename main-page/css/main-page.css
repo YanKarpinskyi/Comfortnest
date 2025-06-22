@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   display: flex;
   height: 10vh;
@@ -43,6 +42,7 @@ header {
 
 main {
   margin-top: 12vh;
+  padding-bottom: 20vh;
 }
 
 .ware-search {
@@ -170,12 +170,19 @@ main {
 .cards-wrapper {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
-  grid-template-rows: repeat(3, 42vh);
+  grid-template-rows: 42vh repeat(2, 51vh);
   margin: 5% 5% 5% 15%;
   width: 70vw;
-  height: 90vh;
   gap: 5vh;
-  margin-bottom: 700px;
+}
+
+.promo-price {
+  position: absolute;
+  top: 2vh;
+  right: 1vw;
+  font-size: 1.4vw;
+  font-weight: 700;
+  color: #FFA448;
 }
 
 .promo-text {
@@ -195,6 +202,8 @@ main {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 10px;
+  position: relative;
+  cursor: pointer;
 }
 
 .ware-img {
@@ -213,8 +222,8 @@ main {
 
 .ware-name, .ware-card-descr p {
   overflow-wrap: break-word;
-  word-wrap: break-word; /* для кращої сумісності */
-  hyphens: auto; /* для автоматичного переносу слів, якщо підтримується */
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .ware-name {
@@ -223,11 +232,25 @@ main {
   text-align: center;
 }
 
+.price {
+  font-weight: 600;
+  font-size: 1.5vw;
+  margin-top: 1vh;
+  margin-left: 0.5vw;
+}
+
+.promo-ware-card-descr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1vw;
+}
+
 .ware-card-descr {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.7vw;
+  margin-top: 0.2vh;
 }
 
 .rating {
@@ -250,6 +273,47 @@ main {
   width: auto;
   cursor: pointer;
   margin-right: 0.5vw;
+}
+
+.chatbot {
+  width: 22vw;
+  height: auto;
+  background-color: #AAC8C4;
+  border: none;
+  border-radius: 15px;
+  margin-right: auto;
+  margin-left: 75%;
+}
+
+.chatbot-content {
+  justify-items: center;
+}
+
+.chatbot-header {
+  display: flex;
+}
+
+#chatbot-heading {
+  align-content: center;
+  margin-left: 0.5vw;
+}
+
+#chatbot-descr {
+  font-size: 0.7vw;
+  font-weight: 600;
+}
+
+#chatbot-input {
+  border: none;
+  width: 20vw;
+  height: 2vh;
+  margin-top: 15px;
+  margin-bottom: 18px;
+}
+
+#chatbot-input::placeholder {
+  font-size: 0.7vw;
+  font-weight: 400;
 }
 
 footer {

@@ -39,6 +39,7 @@ header {
 
 main {
     margin-top: 12vh;
+    padding-bottom: 20vh
 }
 
 .ware-search {
@@ -56,7 +57,7 @@ main {
     height: 9vh;
     padding-left: 1vw;
     align-items: center;
-    background-color: #805B48;
+    background-color: v.$cat-btn-bg;
     border: none;
     border-radius: 1vh;
     cursor: pointer;
@@ -71,7 +72,7 @@ main {
 
 .cat-menu {
     position: absolute;
-    background-color: #E8D1BC;
+    background-color: v.$cat-menu-bg;
     width: v.$cat-btn-width * 1.5;
     height: auto;
     border-radius: 5px;
@@ -95,7 +96,7 @@ main {
 }
 
 .cat-menu ul li:hover{
-    background-color: #B8926D;
+    background-color: v.$cat-menu-hover-bg;
     cursor: pointer;
 }
 
@@ -137,7 +138,7 @@ main {
     margin-left: 5vw;
     width: 65vw;
     height: 9vh;
-    background-color: #E9E6E6;
+    background-color: v.$search-bg;
     border-radius: 50px;
     padding-right: 2vh; 
     font-size: 3vh;
@@ -163,18 +164,25 @@ main {
 .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-template-rows: repeat(3, 42vh);
+    grid-template-rows: 42vh repeat(2, 51vh);
     margin: 5% 5% 5% 15%;
     width: 70vw;
-    height: 90vh;
     gap: 5vh;
-    margin-bottom: 700px;
+}
+
+.promo-price {
+    position: absolute;
+    top: 2vh;
+    right: 1vw;
+    font-size: 1.4vw;
+    font-weight: 700;
+    color: v.$promo-price-color;
 }
 
 .promo-text {
     font-size: 6vh;
     font-weight: 600;
-    color: #DB5151;
+    color: v.$promo-text-color;
     text-align: center;
     grid-column: span 2;
 }
@@ -182,12 +190,14 @@ main {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #C5C5C5;
+    background-color: v.$card-bg;
     width: 100%;
     height: auto;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
 .ware-img {
@@ -206,8 +216,8 @@ main {
 
 .ware-name, .ware-card-descr p {
     overflow-wrap: break-word;
-    word-wrap: break-word; /* для кращої сумісності */
-    hyphens: auto; /* для автоматичного переносу слів, якщо підтримується */
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .ware-name {
@@ -216,11 +226,25 @@ main {
     text-align: center;
 }
 
+.price {
+    font-weight: 600;
+    font-size: 1.5vw;
+    margin-top: 1vh;
+    margin-left: 0.5vw;
+}
+
+.promo-ware-card-descr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vw;
+}
+
 .ware-card-descr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.7vw;
+    margin-top: 0.2vh;
 }
 
 .rating {
@@ -230,7 +254,7 @@ main {
 }
 
 .star {
-    @include m.adaptive-img(2vh); // Зменшено для адаптивності
+    @include m.adaptive-img(2vh);
 }
 
 .grade {
@@ -241,6 +265,49 @@ main {
     @include m.adaptive-img(2.5vh); // Зменшено для адаптивності
     cursor: pointer;
     margin-right: 0.5vw;
+}
+
+.chatbot {
+    width: 22vw;
+    height: auto;
+    background-color: v.$chatbot-bg;
+    border: none;
+    border-radius: 15px;
+    margin-right: auto;
+    margin-left: 75%;
+}
+
+
+
+.chatbot-content {
+    justify-items: center;
+}
+
+.chatbot-header {
+    display: flex;
+}
+
+#chatbot-heading {
+    align-content: center;
+    margin-left: 0.5vw;
+}
+
+#chatbot-descr {
+    font-size: 0.7vw;
+    font-weight: 600;
+}
+
+#chatbot-input {
+    border: none;
+    width: 20vw;
+    height: 2vh;
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+#chatbot-input::placeholder {
+    font-size: 0.7vw;
+    font-weight: 400;  
 }
 
 footer {
