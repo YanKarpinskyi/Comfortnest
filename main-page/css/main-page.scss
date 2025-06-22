@@ -27,6 +27,7 @@ header {
 
 .sign-in-icon, .cart-icon, .fav-icon, .lang-icon {
     @include m.adaptive-img(4vh);
+    cursor: pointer;    
 }
 
 .header-line {
@@ -36,8 +37,131 @@ header {
     left: 0;
 }
 
-footer {
+main {
+    margin-top: 10vh;
+}
+
+.ware-search {
+    display: flex;
+    justify-content: space-around;
+}
+
+.categories-wrapper {
+    position: relative;
+}
+
+.categories-btn {
+    display: flex;
+    width: v.$cat-btn-width;
+    height: 9vh;
+    padding-left: 1vw;
+    align-items: center;
+    background-color: #805B48;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.categories-btn p {
+    padding-left: 1vw;
+    font-size: 2vw;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.cat-menu {
     position: absolute;
+    background-color: #E8D1BC;
+    width: v.$cat-btn-width * 1.5;
+    height: auto;
+    border-radius: 5px;
+    z-index: 100;
+    display: none;
+}
+
+.cat-menu ul {
+    list-style-type: none;
+    justify-items: center;
+}
+
+.cat-menu ul li{
+    display: flex;
+    border-bottom: 1px solid #000000;
+    width: 95%;
+    font-size: 1.2vw;
+    padding: 3px;
+    align-items: center;
+    text-align: left;
+}
+
+.cat-menu ul li:hover{
+    background-color: #B8926D;
+    cursor: pointer;
+}
+
+.categories-icons {
+    @include m.adaptive-img(2.5vh);
+    margin-top: 3px;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+.burger {
+  width: 5vh;
+  height: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 0.8vh;
+  border-radius: 2px;
+  transition: 0.3s;
+  width: 100%;
+  background-color: #fff;
+}
+
+.search-line {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    margin-left: 5vw;
+    width: 65vw;
+    height: 9vh;
+    background-color: #E9E6E6;
+    border-radius: 50px;
+    padding-right: 2vh; 
+    font-size: 3vh;
+    color: #000000;
+    padding-left: 2vw;
+    border-color: #000000;
+}
+
+.search-btn {
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    @include m.adaptive-img(6.3vh);
+    right: 0.7vw;
+}
+
+.search-icon {
+    @include m.adaptive-img(6.3vh);
+    display: block;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
     display: grid;
     font-size: 1vw;
     font-weight: 300;
@@ -57,7 +181,7 @@ footer {
 .refs ul {
     list-style-type: square;
     color: #000000;
-    padding-left: 2.5rem;
+    margin-left: 2.5vw;
 }
 
 .networks {
@@ -65,17 +189,17 @@ footer {
 }
 
 .networks-content > p {
-    margin-left: 4%;
+    margin-left: 1.75vw;
     margin-bottom: 0.2vw;
 }
 
 .network-icon {
-    height: 5.5vh;
-    width: auto;
+    @include m.adaptive-img(3vw);
+    cursor: pointer;
 }
 
 .netw-icons-wrapper {
-    margin-left: 0.8vw;
+    margin-left: 1.4vw;
 }
 
 .contacts {
@@ -92,7 +216,7 @@ footer {
     "map-point map-point map-point";
     place-items: center;
     height: 4.2vw;
-    width: 40vw;
+    width: 45vw;
 }
 
 .kyivstar, .vodafone, .lifecell, .map-point-wrapper {
@@ -140,11 +264,11 @@ footer {
 }
 
 .operator-icon {
-    @include m.adaptive-img(2vh);
+    @include m.adaptive-img(1vw);
 }
 
 .partners-icon {
-    @include m.adaptive-img(7vh);
+    @include m.adaptive-img(4vw);
 }
 
 .footer-bottom {

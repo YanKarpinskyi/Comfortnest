@@ -15,3 +15,11 @@
     border: none;
     margin-left: $margin-left;
 }
+
+@mixin flex-container($direction: row, $justify: flex-start, $align-items: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align-items;
+  gap: $gap;
+}
