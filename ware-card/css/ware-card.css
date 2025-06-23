@@ -209,18 +209,18 @@ main {
   border: none;
   background: transparent;
   font-size: 15px;
-  color: #696969;
+  color: #666; /* Fallback for v.$write-review-color */
   outline: none;
   font-family: inherit;
 }
 
 .review-input::placeholder {
-  color: #696969;
+  color: #666; /* Fallback for v.$write-review-color */
 }
 
 .submit-btn {
-  background-color: #696969;
-  color: #ffffff;
+  background-color: #666; /* Fallback for v.$write-review-color */
+  color: #fff; /* Fallback for v.$btn-color */
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
@@ -230,7 +230,7 @@ main {
 }
 
 .submit-btn:hover {
-  background-color: #363636;
+  background-color: #555; /* Darken effect */
 }
 
 .rating-section {
@@ -250,12 +250,12 @@ main {
   gap: 5px;
   margin-bottom: 10px;
   align-content: center;
+  cursor: pointer;
 }
 
 .star {
   font-size: 20px;
   color: #ddd;
-  cursor: pointer;
   transition: color 0.2s;
 }
 
@@ -263,7 +263,18 @@ main {
   color: #ffd700;
 }
 
-.star:hover {
+/* Restrict hover to interactive stars only */
+#starRating .interactive-star:hover {
+  color: #ffd700;
+}
+
+/* Explicitly disable hover for review stars */
+.review-item .rating .star {
+  cursor: default;
+  color: #ddd;
+}
+
+.review-item .rating .star.active {
   color: #ffd700;
 }
 

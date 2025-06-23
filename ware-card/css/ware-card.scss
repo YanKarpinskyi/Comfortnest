@@ -146,129 +146,138 @@ main {
 }
 
 .reviews-wrapper {
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    background-color: v.$reviews-wrapper-bg;
-    border-radius: 15px;
-    padding: 20px;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  background-color: v.$reviews-wrapper-bg;
+  border-radius: 15px;
+  padding: 20px;
 }
 
-
 .reviews-header {
-    color: v.$text-color-def;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
+  color: v.$text-color-def; 
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .reviews-list {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .review-item {
-    background-color: #FFFDFA;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
+  background-color: #FFFDFA;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .review-content {
-    flex: 1;
+  flex: 1;
 }
 
 .reviewer-name {
-    font-weight: bold;
-    color: v.$text-color-def;
-    margin-bottom: 5px;
-    font-size: 16px;
+  font-weight: bold;
+  color: v.$text-color-def;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .review-text {
-    color: v.$text-color-def;
-    line-height: 1.4;
-    font-size: 15px;
+  color: v.$text-color-def;
+  line-height: 1.4;
+  font-size: 15px;
 }
 
 .add-review-section {
-    background-color: v.$review-bg;
-    border-radius: 12px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  background-color: v.$review-bg; 
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .input-area {
-    flex: 1;
+  flex: 1;
 }
 
 .review-input {
-    width: 100%;
-    border: none;
-    background: transparent;
-    font-size: 15px;
-    color: v.$write-review-color;
-    outline: none;
-    font-family: inherit;
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  color: #666; /* Fallback for v.$write-review-color */
+  outline: none;
+  font-family: inherit;
 }
 
 .review-input::placeholder {
-    color: v.$write-review-color;
+  color: #666; /* Fallback for v.$write-review-color */
 }
 
 .submit-btn {
-    background-color: v.$write-review-color;
-    color: v.$btn-color;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s;
+  background-color: #666; /* Fallback for v.$write-review-color */
+  color: #fff; /* Fallback for v.$btn-color */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
 }
 
 .submit-btn:hover {
-    background-color: darken(v.$write-review-color, 20%);
+  background-color: #555; /* Darken effect */
 }
 
 .rating-section {
-    display: flex;
-    margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .rating-label {
-    color: #6b5d4f;
-    font-size: 14px;
-    align-content: center;
-    margin-right: 3px;
+  color: #6b5d4f;
+  font-size: 14px;
+  align-content: center;
+  margin-right: 3px;
 }
 
 .star-rating {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 10px;
-    align-content: center;
-
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  align-content: center;
+  cursor: pointer;
 }
 
 .star {
-    font-size: 20px;
-    color: #ddd;
-    cursor: pointer;
-    transition: color 0.2s;
+  font-size: 20px;
+  color: #ddd;
+  transition: color 0.2s;
 }
 
 .star.active {
-    color: #ffd700;
+  color: #ffd700;
 }
 
-.star:hover {
-    color: #ffd700;
+/* Restrict hover to interactive stars only */
+#starRating .interactive-star:hover {
+  color: #ffd700;
+}
+
+/* Explicitly disable hover for review stars */
+.review-item .rating .star {
+  cursor: default;
+  color: #ddd;
+}
+
+.review-item .rating .star.active {
+  color: #ffd700;
 }
 
 .to-cart {
