@@ -21,7 +21,7 @@ main {
 .slider {
     width: 50%;
     height: 60vh;
-    background-color: #686868;
+    background-color: v.$slider-bg;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
@@ -45,7 +45,7 @@ main {
 .ware-info {
     width: 50%;
     border-radius: 15px;
-    background-color: #D8D8D8;
+    background-color: v.$ware-info-bg;
     padding: 20px;
 }
 
@@ -134,7 +134,7 @@ main {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #bbb;
+    background-color: v.$indicator-bg;
     cursor: pointer;
     transition: width 0.3s, height 0.3s;
 }
@@ -142,20 +142,21 @@ main {
 .indicator.active {
     width: 15px;
     height: 15px;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .reviews-wrapper {
     max-width: 100%;
     height: auto;
     margin: 0;
-    background-color: #A98256;
+    background-color: v.$reviews-wrapper-bg;
     border-radius: 15px;
     padding: 20px;
 }
 
+
 .reviews-header {
-    color: #2c1810;
+    color: v.$text-color-def;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -182,19 +183,19 @@ main {
 
 .reviewer-name {
     font-weight: bold;
-    color: #2c1810;
+    color: v.$text-color-def;
     margin-bottom: 5px;
     font-size: 16px;
 }
 
 .review-text {
-    color: #2c1810;
+    color: v.$review-color;
     line-height: 1.4;
     font-size: 15px;
 }
 
 .add-review-section {
-    background-color: #FFFDFA;
+    background-color: v.$review-bg;
     border-radius: 12px;
     padding: 15px;
     display: flex;
@@ -211,18 +212,18 @@ main {
     border: none;
     background: transparent;
     font-size: 15px;
-    color: #6b5d4f;
+    color: v.$write-review-color;
     outline: none;
     font-family: inherit;
 }
 
 .review-input::placeholder {
-    color: #6b5d4f;
+    color: v.$write-review-color;
 }
 
 .submit-btn {
-    background-color: #8a7960;
-    color: #ffffff;
+    background-color: v.$write-review-color;
+    color: v.$btn-color;
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
@@ -232,7 +233,7 @@ main {
 }
 
 .submit-btn:hover {
-    background-color: #756652;
+    background-color: darken(v.$write-review-color, 20%);
 }
 
 .to-cart {
@@ -286,5 +287,5 @@ main {
 }
 
 .sending-para:nth-of-type(n+2) .sending-radio {
-  margin-top: 5px;
+    margin-top: 5px;
 }
