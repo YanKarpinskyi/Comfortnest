@@ -1,0 +1,521 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfortnést</title>
+    <link rel="stylesheet" href="../main-css/main.css">
+    <link rel="stylesheet" href="../main-page/css/main-page.css">
+    <link rel="stylesheet" href="../ware-card/css/ware-card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../main-page/index.html"><img src="../main-page/img/Comfortnést.png" alt="logo" class="logo"></a>
+        <div class="header-nav">
+            <img src="../main-page/img/sign-in-icon.png" alt="sign-in-icon" class="sign-in-icon">
+            <p>Вхід</p>
+            <img src="../main-page/img/cart-icon.png" alt="cart-icon" class="cart-icon">
+            <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="fav-icon">
+            <img src="../main-page/img/lang-icon.png" alt="lang-icon" class="lang-icon">
+        </div>
+        <hr class="header-line">
+    </header>
+    <main>
+        <div class="slider">
+            <img id="product-img">
+            <img src="../main-page/img/racer-chair.png" alt="ware-img" class="slide active" id="product-img-1">
+            <img src="../main-page/img/desk.png" alt="ware-img" class="slide" id="product-img-2">
+            <img src="../main-page/img/racer-chair.png" alt="ware-img" class="slide" id="product-img-3">
+            <img src="../main-page/img/desk.png" alt="ware-img" class="slide" id="product-img-4">
+            <button class="switch prev" onclick="changeSlide(-1)">
+                <img src="../ware-card/img/switch-prev.png" alt="switch-prev" class="asd">
+            </button>
+
+            <button class="switch next" onclick="changeSlide(1)">
+                <img src="../ware-card/img/switch-next.png" alt="switch-next" class="asd">
+            </button>
+            <div class="indicators"></div>
+        </div>
+        <div class="ware-info">
+            <div class="ware-heading">
+                <h1 id="product-name"></h1>
+                <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="fav-icon">
+            </div>
+            <div class="ware-parametres">
+                <p><strong>Стиль:</strong> <span id="product-style"></span></p>
+                <p><strong>Колір:</strong> <span id="product-color"></span></p>
+                <p><strong>Матеріали:</strong> <span id="product-materials"></span></p>
+                <h2 id="product-price"></h2>
+                <p id="sizes-heading"><strong>Розміри:</strong></p>
+                <p id="extra-info"></p>
+                <div class="sizes">
+                    <label for="length-select"><strong>Довжина:</strong></label>
+                    <select id="length-select"></select>
+                    <label for="width-select"><strong>Ширина:</strong></label>
+                    <select id="width-select"></select>
+                    <label for="height-select"><strong>Висота:</strong></label>
+                    <select id="height-select"></select>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-wrapper">
+            <div class="reviews-header">Відгуки (3)</div>
+            <div class="reviews-list" id="reviewsList">
+                <div class="review-item">
+                <div class="avatar">
+                    <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-name">Артем:</div>
+                    <div class="review-text">Дуже якісний диван, виправдав мої очікування. Усім раджу!</div>
+                </div>
+                </div>
+                
+                <div class="review-item">
+                <div class="avatar">
+                    <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-name">Катерина:</div>
+                    <div class="review-text">Зручний, мені сподобався</div>
+                </div>
+                </div>
+                
+                <div class="review-item">
+                <div class="avatar">
+                    <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-name">Тарас:</div>
+                    <div class="review-text">Ціна підходить цьому товару.</div>
+                </div>
+            </div>
+            <div class="add-review-section">
+                <div class="add-review-icon">
+                <img src="../ware-card/img/edit-icon.png" alt="edit-icon" class="edit-icon">
+                </div>
+                <div class="input-area">
+                <input type="text" class="review-input" id="reviewInput" placeholder="Написати відгук">
+                <input type="text" class="review-input" id="nameInput" placeholder="Ваше ім'я" style="margin-top: 8px;">
+                </div>
+                <button class="submit-btn" onclick="addReview()">Надіслати</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="refs">
+            <ul>
+                <li>ПОШИРЕНІ ЗАПИТАННЯ</li>
+                <li>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</li>
+                <li>ПОЛІТИКА ДОСТАВКИ</li>
+            </ul>
+        </div>
+        <div class="networks">
+            <div class="networks-content">
+                <p>Ми у соцмережах:</p>
+                <div class="netw-icons-wrapper">
+                    <img src="../main-page/img/x.png" alt="x" class="network-icon">
+                    <img src="../main-page/img/inst.png" alt="inst" class="network-icon">
+                    <img src="../main-page/img/facebook.png" alt="facebook" class="network-icon">
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="contacts-content">
+                <p class="contacts-heading">Контактна інформація:</p>
+                <div class="kyivstar">
+                    <img src="../main-page/img/kyivstar.png" alt="kyivstar" class="operator-icon">
+                    <p>(+38)068-926-58-32</p>
+                </div>
+                <div class="vodafone">
+                    <img src="../main-page/img/vodafone.png" alt="vodafone" class="operator-icon">
+                    <p>(+38)050-123-55-33</p>
+                </div>
+                <div class="lifecell">
+                    <img src="../main-page/img/lifecell.png" alt="lifecell" class="operator-icon">
+                    <p>(+38)063-675-73-55</p>
+                </div>
+                <div class="map-point-wrapper">
+                    <img src="../main-page/img/map-point.png" alt="map-point" class="map-point">
+                    <p>М. Київ, проспект Тараса Шевченка, 77б (ГОЛОВНИЙ ОФІС)</p>
+                </div>
+            </div>
+        </div>
+        <div class="partners">
+            <p>Наші партнери:</p>
+            <div class="partners-icons">
+                <img src="../main-page/img/loft-buro.png" alt="loft-buro" class="partners-icon">
+                <img src="../main-page/img/gerbor.png" alt="gerbor" class="partners-icon">
+                <img src="../main-page/img/divanoff.png" alt="divanoff" class="partners-icon">
+                <img src="../main-page/img/svoya.png" alt="svoya" class="partners-icon">
+                <img src="../main-page/img/pack-group.png" alt="pack-group" class="partners-icon">                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr class="footer-line">
+            <p class="footer-final-text">© 2025 Comfortnést. Усі права захищено.</p>
+        </div>
+    </footer>
+</body>
+<script src="../ware-card/js/ware-card.js"></script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfortnést</title>
+    <link rel="stylesheet" href="../main-css/main.css">
+    <link rel="stylesheet" href="../main-page/css/main-page.css">
+    <link rel="stylesheet" href="../ware-card/css/ware-card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../main-page/index.html"><img src="../main-page/img/Comfortnést.png" alt="logo" class="logo"></a>
+        <div class="header-nav">
+            <img src="../main-page/img/sign-in-icon.png" alt="sign-in-icon" class="sign-in-icon">
+            <p>Вхід</p>
+            <img src="../main-page/img/cart-icon.png" alt="cart-icon" class="cart-icon">
+            <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="fav-icon">
+            <img src="../main-page/img/lang-icon.png" alt="lang-icon" class="lang-icon">
+        </div>
+        <hr class="header-line">
+    </header>
+    <main>
+        <div class="slider">
+            <img id="product-img">
+            <img src="../main-page/img/racer-chair.png" alt="ware-img" class="slide active" id="product-img-1">
+            <img src="../main-page/img/desk.png" alt="ware-img" class="slide" id="product-img-2">
+            <img src="../main-page/img/racer-chair.png" alt="ware-img" class="slide" id="product-img-3">
+            <img src="../main-page/img/desk.png" alt="ware-img" class="slide" id="product-img-4">
+            <button class="switch prev" onclick="changeSlide(-1)">
+                <img src="../ware-card/img/switch-prev.png" alt="switch-prev" class="asd">
+            </button>
+            <button class="switch next" onclick="changeSlide(1)">
+                <img src="../ware-card/img/switch-next.png" alt="switch-next" class="asd">
+            </button>
+            <div class="indicators"></div>
+        </div>
+        <div class="ware-info">
+            <div class="ware-heading">
+                <h1 id="product-name"></h1>
+                <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="fav-icon">
+            </div>
+            <div class="ware-parametres">
+                <p><strong>Стиль:</strong> <span id="product-style"></span></p>
+                <p><strong>Колір:</strong> <span id="product-color"></span></p>
+                <p><strong>Матеріали:</strong> <span id="product-materials"></span></p>
+                <h2 id="product-price"></h2>
+                <p id="sizes-heading"><strong>Розміри:</strong></p>
+                <p id="extra-info"></p>
+                <div class="sizes">
+                    <label for="length-select"><strong>Довжина:</strong></label>
+                    <select id="length-select"></select>
+                    <label for="width-select"><strong>Ширина:</strong></label>
+                    <select id="width-select"></select>
+                    <label for="height-select"><strong>Висота:</strong></label>
+                    <select id="height-select"></select>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-wrapper">
+            <div class="reviews-header">Відгуки (3)</div>
+            <div class="reviews-list" id="reviewsList">
+                <div class="review-item">
+                    <div class="avatar">
+                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-name">Артем:</div>
+                        <div class="review-text">Дуже якісний диван, виправдав мої очікування. Усім раджу!</div>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <div class="avatar">
+                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-name">Катерина:</div>
+                        <div class="review-text">Зручний, мені сподобався</div>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <div class="avatar">
+                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-name">Тарас:</div>
+                        <div class="review-text">Ціна підходить цьому товару.</div>
+                    </div>
+                </div>
+                <div class="add-review-section">
+                    <div class="add-review-icon">
+                        <img src="../ware-card/img/edit-icon.png" alt="edit-icon" class="edit-icon">
+                    </div>
+                    <div class="input-area">
+                        <input type="text" class="review-input" id="reviewInput" placeholder="Написати відгук">
+                        <input type="text" class="review-input" id="nameInput" placeholder="Ваше ім'я" style="margin-top: 8px;">
+                    </div>
+                    <button class="submit-btn" onclick="addReview()">Надіслати</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="refs">
+            <ul>
+                <li>ПОШИРЕНІ ЗАПИТАННЯ</li>
+                <li>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</li>
+                <li>ПОЛІТИКА ДОСТАВКИ</li>
+            </ul>
+        </div>
+        <div class="networks">
+            <div class="networks-content">
+                <p>Ми у соцмережах:</p>
+                <div class="netw-icons-wrapper">
+                    <img src="../main-page/img/x.png" alt="x" class="network-icon">
+                    <img src="../main-page/img/inst.png" alt="inst" class="network-icon">
+                    <img src="../main-page/img/facebook.png" alt="facebook" class="network-icon">
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="contacts-content">
+                <p class="contacts-heading">Контактна інформація:</p>
+                <div class="kyivstar">
+                    <img src="../main-page/img/kyivstar.png" alt="kyivstar" class="operator-icon">
+                    <p>(+38)068-926-58-32</p>
+                </div>
+                <div class="vodafone">
+                    <img src="../main-page/img/vodafone.png" alt="vodafone" class="operator-icon">
+                    <p>(+38)050-123-55-33</p>
+                </div>
+                <div class="lifecell">
+                    <img src="../main-page/img/lifecell.png" alt="lifecell" class="operator-icon">
+                    <p>(+38)063-675-73-55</p>
+                </div>
+                <div class="map-point-wrapper">
+                    <img src="../main-page/img/map-point.png" alt="map-point" class="map-point">
+                    <p>М. Київ, проспект Тараса Шевченка, 77б (ГОЛОВНИЙ ОФІС)</p>
+                </div>
+            </div>
+        </div>
+        <div class="partners">
+            <p>Наші партнери:</p>
+            <div class="partners-icons">
+                <img src="../main-page/img/loft-buro.png" alt="loft-buro" class="partners-icon">
+                <img src="../main-page/img/gerbor.png" alt="gerbor" class="partners-icon">
+                <img src="../main-page/img/divanoff.png" alt="divanoff" class="partners-icon">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr class="footer-line">
+            <p class="footer-final-text">© 2025 Comfortnést. Усі права захищено.</p>
+        </div>
+    </footer>
+</body>
+<script src="../ware-card/js/ware-card.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfortnést</title>
+    <link rel="stylesheet" href="../main-css/main.css">
+    <link rel="stylesheet" href="../main-page/css/main-page.css">
+    <link rel="stylesheet" href="../ware-card/css/ware-card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../main-page/index.html"><img src="../main-page/img/Comfortnést.png" alt="logo" class="logo"></a>
+        <div class="header-nav">
+            <img src="../main-page/img/sign-in-icon.png" alt="sign-in-icon" class="sign-in-icon">
+            <p>Вхід</p>
+            <img src="../main-page/img/cart-icon.png" alt="cart-icon" class="cart-icon">
+            <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="fav-icon">
+            <img src="../main-page/img/lang-icon.png" alt="lang-icon" class="lang-icon">
+        </div>
+        <hr class="header-line">
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="slider">
+                <img id="product-img">
+                <button class="switch prev" onclick="changeSlide(-1)">
+                    <img src="../ware-card/img/switch-prev.png" alt="switch-prev" class="asd">
+                </button>
+                <button class="switch next" onclick="changeSlide(1)">
+                    <img src="../ware-card/img/switch-next.png" alt="switch-next" class="asd">
+                </button>
+                <div class="indicators"></div>
+            </div>
+            <div class="ware-info">
+                <div class="ware-heading">
+                    <h1 id="product-name"></h1>
+                    <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="ware-fav-icon">
+                </div>
+                <div class="ware-parametres">
+                    <p><strong>Стиль:</strong> <span id="product-style"></span></p>
+                    <p><strong>Колір:</strong> <span id="product-color"></span></p>
+                    <p><strong>Матеріали:</strong> <span id="product-materials"></span></p>
+                    <h2 id="product-price"></h2>
+                    <p id="sizes-heading"><strong>Розміри:</strong></p>
+                    <p id="extra-info"></p>
+                    <div class="sizes">
+                        <label for="length-select"><strong>Довжина:</strong></label>
+                        <select id="length-select"></select>
+                        <label for="width-select"><strong>Ширина:</strong></label>
+                        <select id="width-select"></select>
+                        <label for="height-select"><strong>Висота:</strong></label>
+                        <select id="height-select"></select>
+                    </div>
+                </div>
+                <button class="to-cart">
+                    <img src="../ware-card/img/cart-white.png" alt="cart" class="to-cart-icon">
+                    До кошика
+                </button>
+            </div>
+        </div>
+        <div class="sending">
+            <div class="sending-header">
+                <h2>Бажаєте отримати детальний відеоогляд товару?</h2>
+                <p><i>Оберіть куди хотіли б його отримати:</i></p>
+            </div>
+            <div class="sending-radios">
+                <div class="sending-para">
+                    <input type="radio" name="sending" id="telegram" class="sending-radio">
+                    <img src="../ware-card/img/tg.png" alt="tg" class="tg-icon">
+                    <label for="telegram"><i>У Telegram</i></label>
+                </div>
+                <div class="sending-para">
+                    <input type="radio" name="sending" id="viber" class="sending-radio">
+                    <img src="../ware-card/img/viber.png" alt="viber" class="viber-icon">
+                    <label for="telegram"><i>На Viber</i></label>
+                </div>
+                <div class="sending-para">
+                    <input type="radio" name="sending" id="whatsup" class="sending-radio">
+                    <img src="../ware-card/img/whatsApp.png" alt="whatsApp" class="whatsApp-icon">
+                    <label for="telegram"><i>У Whats'up</i></label>                    
+                </div>
+                <div class="sending-para">
+                    <input type="radio" name="sending" id="mail" class="sending-radio">
+                    <img src="../ware-card/img/gmail.png" alt="gmail" class="gmail-icon">
+                    <label for="telegram"><i>На пошту</i></label>                    
+                </div>
+                <div class="sending-para">
+                    <input type="radio" name="sending" id="whatever" class="sending-radio">
+                    <label for="telegram"><i>Без різниці</i></label>                    
+                </div>
+            </div>
+        </div>
+        <div class="reviews-wrapper">
+            <div class="reviews-header">Відгуки (3)</div>
+            <div class="reviews-list" id="reviewsList">
+                <div class="review-item">
+                    <div class="avatar">
+                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-name">Артем:</div>
+                        <div class="review-text">Дуже якісний диван, виправдав мої очікування. Усім раджу!</div>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <div class="avatar">
+                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-name">Катерина:</div>
+                        <div class="review-text">Зручний, мені сподобався</div>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <div class="avatar">
+                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-name">Тарас:</div>
+                        <div class="review-text">Ціна підходить цьому товару.</div>
+                    </div>
+                </div>
+                <div class="add-review-section">
+                    <div class="add-review-icon">
+                        <img src="../ware-card/img/edit-icon.png" alt="edit-icon" class="edit-icon">
+                    </div>
+                    <div class="input-area">
+                        <input type="text" class="review-input" id="reviewInput" placeholder="Написати відгук">
+                        <input type="text" class="review-input" id="nameInput" placeholder="Ваше ім'я" style="margin-top: 8px;">
+                    </div>
+                    <button class="submit-btn" onclick="addReview()">Надіслати</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="refs">
+            <ul>
+                <li>ПОШИРЕНІ ЗАПИТАННЯ</li>
+                <li>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</li>
+                <li>ПОЛІТИКА ДОСТАВКИ</li>
+            </ul>
+        </div>
+        <div class="networks">
+            <div class="networks-content">
+                <p>Ми у соцмережах:</p>
+                <div class="netw-icons-wrapper">
+                    <img src="../main-page/img/x.png" alt="x" class="network-icon">
+                    <img src="../main-page/img/inst.png" alt="inst" class="network-icon">
+                    <img src="../main-page/img/facebook.png" alt="facebook" class="network-icon">
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="contacts-content">
+                <p class="contacts-heading">Контактна інформація:</p>
+                <div class="kyivstar">
+                    <img src="../main-page/img/kyivstar.png" alt="kyivstar" class="operator-icon">
+                    <p>(+38)068-926-58-32</p>
+                </div>
+                <div class="vodafone">
+                    <img src="../main-page/img/vodafone.png" alt="vodafone" class="operator-icon">
+                    <p>(+38)050-123-55-33</p>
+                </div>
+                <div class="lifecell">
+                    <img src="../main-page/img/lifecell.png" alt="lifecell" class="operator-icon">
+                    <p>(+38)063-675-73-55</p>
+                </div>
+                <div class="map-point-wrapper">
+                    <img src="../main-page/img/map-point.png" alt="map-point" class="map-point">
+                    <p>М. Київ, проспект Тараса Шевченка, 77б (ГОЛОВНИЙ ОФІС)</p>
+                </div>
+            </div>
+        </div>
+        <div class="partners">
+            <p>Наші партнери:</p>
+            <div class="partners-icons">
+                <img src="../main-page/img/loft-buro.png" alt="loft-buro" class="partners-icon">
+                <img src="../main-page/img/gerbor.png" alt="gerbor" class="partners-icon">
+                <img src="../main-page/img/divanoff.png" alt="divanoff" class="partners-icon">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr class="footer-line">
+            <p class="footer-final-text">© 2025 Comfortnést. Усі права захищено.</p>
+        </div>
+    </footer>
+</body>
+<script src="../ware-card/js/ware-card.js"></script>
+</html>
