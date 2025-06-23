@@ -28,10 +28,10 @@
             <div class="slider">
                 <img id="product-img">
                 <button class="switch prev" onclick="changeSlide(-1)">
-                    <img src="../ware-card/img/switch-prev.png" alt="switch-prev" class="asd">
+                    <img src="../ware-card/img/switch-prev.png" alt="switch-prev" class="switch-el">
                 </button>
                 <button class="switch next" onclick="changeSlide(1)">
-                    <img src="../ware-card/img/switch-next.png" alt="switch-next" class="asd">
+                    <img src="../ware-card/img/switch-next.png" alt="switch-next" class="switch-el">
                 </button>
                 <div class="indicators"></div>
             </div>
@@ -129,6 +129,16 @@
                         <img src="../ware-card/img/edit-icon.png" alt="edit-icon" class="edit-icon">
                     </div>
                     <div class="input-area">
+                        <div class="rating-section">
+                            <label class="rating-label">Оцініть товар:</label>
+                            <div class="star-rating" id="starRating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
                         <input type="text" class="review-input" id="reviewInput" placeholder="Написати відгук">
                         <input type="text" class="review-input" id="nameInput" placeholder="Ваше ім'я" style="margin-top: 8px;">
                     </div>
@@ -136,7 +146,6 @@
                 </div>
             </div>
         </div>
-
     </main>
     <footer>
         <div class="refs">

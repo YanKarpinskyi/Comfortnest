@@ -116,7 +116,7 @@ main {
     right: 10px;
 }
 
-.asd {
+.switch-el {
     display: block;
     z-index: 11;
 }
@@ -189,7 +189,7 @@ main {
 }
 
 .review-text {
-    color: v.$review-color;
+    color: v.$text-color-def;
     line-height: 1.4;
     font-size: 15px;
 }
@@ -234,6 +234,41 @@ main {
 
 .submit-btn:hover {
     background-color: darken(v.$write-review-color, 20%);
+}
+
+.rating-section {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.rating-label {
+    color: #6b5d4f;
+    font-size: 14px;
+    align-content: center;
+    margin-right: 3px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    align-content: center;
+
+}
+
+.star {
+    font-size: 20px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star.active {
+    color: #ffd700;
+}
+
+.star:hover {
+    color: #ffd700;
 }
 
 .to-cart {

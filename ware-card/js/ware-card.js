@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  console.log('Loaded product:', product);
-
   document.getElementById('product-name').textContent = product.name || 'Назва не вказана';
   document.getElementById('product-img').src = product.img;
   document.getElementById('product-style').textContent = product.style || 'Невідомо';
@@ -47,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const updateExtraInfo = () => {
     extraInfo.innerHTML = '';
-    console.log('Product type in updateExtraInfo:', product.type); 
 
     if (product.type === 'ковдра' || product.type === 'матрац') {
       const sizeTitle = document.createElement('p');
@@ -123,84 +120,98 @@ document.addEventListener('DOMContentLoaded', () => {
     indicators[currentSlide].classList.add('active');
   }
 
-  let currentRating = 0;
-  let reviewCount = 3;
+let currentRating = 0;
+let reviewCount = 3;
 
-  const stars = document.querySelectorAll('.star');
-  stars.forEach(star => {
-    star.addEventListener('click', function() {
-      currentRating = parseInt(this.dataset.rating) || 0;
-      updateStars();
-    });
-    star.addEventListener('mouseover', function() {
-      const rating = parseInt(this.dataset.rating) || 0;
-      highlightStars(rating);
-    });
-  });
-
-  document.getElementById('starRating')?.addEventListener('mouseleave', function() {
+const stars = document.querySelectorAll('.star');
+stars.forEach(star => {
+  star.addEventListener('click', function() {
+    currentRating = parseInt(this.dataset.rating) || 0;
     updateStars();
   });
+  
+  star.addEventListener('mouseover', function() {
+    const rating = parseInt(this.dataset.rating) || 0;
+    highlightStars(rating);
+  });
+});
 
-  function highlightStars(rating) {
-    stars.forEach((star, index) => {
-      if (index < rating) star.classList.add('active');
-      else star.classList.remove('active');
-    });
-  }
+document.getElementById('starRating')?.addEventListener('mouseleave', function() {
+  updateStars();
+});
 
-  function updateStars() {
-    highlightStars(currentRating);
-  }
-
-  function addReview() {
-    const reviewText = document.getElementById('reviewInput')?.value.trim() || '';
-    const reviewerName = document.getElementById('nameInput')?.value.trim() || '';
-
-    if (!reviewText || !reviewerName || currentRating === 0) {
-      alert('Будь ласка, заповніть всі поля та оберіть рейтинг');
-      return;
+function highlightStars(rating) {
+  stars.forEach((star, index) => {
+    if (index < rating) {
+      star.classList.add('active');
+    } else {
+      star.classList.remove('active');
     }
+  });
+}
 
-    const reviewsList = document.getElementById('reviewsList');
-    const newReview = document.createElement('div');
-    newReview.className = 'review-item';
-    newReview.innerHTML = `
-      <div class="avatar"><div class="avatar-icon"></div></div>
-      <div class="review-content">
-        <div class="reviewer-name">${reviewerName}:</div>
-        <div class="review-text">${reviewText}</div>
-      </div>
-    `;
+function updateStars() {
+  highlightStars(currentRating);
+}
 
-    reviewsList.insertBefore(newReview, reviewsList.firstChild);
-    reviewCount++;
-    document.querySelector('.reviews-header').textContent = `Відгуки (${reviewCount})`;
+function addReview() {
+  const reviewText = document.getElementById('reviewInput')?.value.trim() || '';
+  const reviewerName = document.getElementById('nameInput')?.value.trim() || '';
+  const reviewsList = document.getElementById('reviewsList');
 
-    document.getElementById('reviewInput').value = '';
-    document.getElementById('nameInput').value = '';
-    currentRating = 0;
-    updateStars();
-
-    newReview.style.opacity = '0';
-    newReview.style.transform = 'translateY(-10px)';
-    setTimeout(() => {
-      newReview.style.transition = 'opacity 0.3s, transform 0.3s';
-      newReview.style.opacity = '1';
-      newReview.style.transform = 'translateY(0)';
-    }, 10);
+  if (!reviewText || !reviewerName || currentRating === 0) {
+    alert('Будь ласка, заповніть всі поля та оберіть рейтинг');
+    return;
   }
 
-  document.getElementById('reviewInput')?.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') addReview();
-  });
-  document.getElementById('nameInput')?.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') addReview();
-  });
+  const newReview = document.createElement('div');
+  newReview.className = 'review-item';
+  newReview.innerHTML = `
+    <div class="avatar">
+      <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+    </div>
+    <div class="review-content">
+      <div class="reviewer-name">${reviewerName}:</div>
+      <div class="review-text">${reviewText}</div>
+    </div>
+  `;
+  
+  reviewsList.insertBefore(newReview, reviewsList.firstChild);
+  
+  reviewCount++;
+  document.querySelector('.reviews-header').textContent = `Відгуки (${reviewCount})`;
+  
+  document.getElementById('reviewInput').value = '';
+  document.getElementById('nameInput').value = '';
+  currentRating = 0;
+  updateStars();
+  
+  newReview.style.opacity = '0';
+  newReview.style.transform = 'translateY(-10px)';
+  setTimeout(() => {
+    newReview.style.transition = 'opacity 0.3s, transform 0.3s';
+    newReview.style.opacity = '1';
+    newReview.style.transform = 'translateY(0)';
+  }, 10);
+}
 
-  [lengthSelect, widthSelect, heightSelect].forEach(select => {
-    select?.addEventListener('change', updateExtraInfo);
-  });
+document.getElementById('reviewInput')?.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    addReview();
+  }
+});
+
+document.getElementById('nameInput')?.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    addReview();
+  }
+});
+
+document.querySelector('.submit-btn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  addReview();
+});
 
   updateExtraInfo();
+
 });
