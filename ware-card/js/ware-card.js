@@ -123,10 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentRating = 0;
 let reviewCount = 3;
 
-const stars = document.querySelectorAll('.star');
+const stars = document.querySelectorAll('#starRating .star');
 stars.forEach(star => {
   star.addEventListener('click', function() {
     currentRating = parseInt(this.dataset.rating) || 0;
+    console.log('Rating set to:', currentRating); // Debug log
     updateStars();
   });
   
@@ -159,8 +160,15 @@ function addReview() {
   const reviewerName = document.getElementById('nameInput')?.value.trim() || '';
   const reviewsList = document.getElementById('reviewsList');
 
-  if (!reviewText || !reviewerName || currentRating === 0) {
-    alert('Будь ласка, заповніть всі поля та оберіть рейтинг');
+  console.log('Attempting to add review:', { reviewText, reviewerName, currentRating }); // Debug log
+
+  if (!reviewerName || currentRating === 0) {
+    alert("Будь ласка, введіть своє ім'я та оберіть рейтинг");
+    return;
+  }
+
+  if (!reviewsList) {
+    console.error('Reviews list not found!');
     return;
   }
 
@@ -173,6 +181,12 @@ function addReview() {
     <div class="review-content">
       <div class="reviewer-name">${reviewerName}:</div>
       <div class="review-text">${reviewText}</div>
+    </div>
+    <div class="rating">
+      ${Array(5)
+        .fill()
+        .map((_, index) => `<span class="star ${index < currentRating ? 'active' : ''}" data-rating="${index + 1}">★</span>`)
+        .join('')}
     </div>
   `;
   
@@ -208,7 +222,7 @@ document.getElementById('nameInput')?.addEventListener('keypress', function(e) {
 });
 
 document.querySelector('.submit-btn')?.addEventListener('click', function(e) {
-  e.preventDefault();
+  e.preventDefault(); // Prevent any default button behavior
   addReview();
 });
 

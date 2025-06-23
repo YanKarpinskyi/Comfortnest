@@ -98,51 +98,72 @@
             <div class="reviews-header">Відгуки (3)</div>
             <div class="reviews-list" id="reviewsList">
                 <div class="review-item">
-                    <div class="avatar">
-                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
-                    </div>
-                    <div class="review-content">
-                        <div class="reviewer-name">Артем:</div>
-                        <div class="review-text">Дуже якісний диван, виправдав мої очікування. Усім раджу!</div>
-                    </div>
+                <div class="avatar">
+                    <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-name">Артем:</div>
+                    <div class="review-text">Дуже якісний диван, виправдав мої очікування. Усім раджу!</div>
+                </div>
+                <div class="rating">
+                    <span class="star active" data-rating="1">★</span>
+                    <span class="star active" data-rating="2">★</span>
+                    <span class="star active" data-rating="3">★</span>
+                    <span class="star active" data-rating="4">★</span>
+                    <span class="star active" data-rating="5">★</span>
+                </div>
                 </div>
                 <div class="review-item">
-                    <div class="avatar">
-                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
-                    </div>
-                    <div class="review-content">
-                        <div class="reviewer-name">Катерина:</div>
-                        <div class="review-text">Зручний, мені сподобався</div>
-                    </div>
+                <div class="avatar">
+                    <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-name">Катерина:</div>
+                    <div class="review-text">Зручний, мені сподобався</div>
+                </div>
+                <div class="rating">
+                    <span class="star active" data-rating="1">★</span>
+                    <span class="star active" data-rating="2">★</span>
+                    <span class="star active" data-rating="3">★</span>
+                    <span class="star active" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
                 </div>
                 <div class="review-item">
-                    <div class="avatar">
-                        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
-                    </div>
-                    <div class="review-content">
-                        <div class="reviewer-name">Тарас:</div>
-                        <div class="review-text">Ціна підходить цьому товару.</div>
-                    </div>
+                <div class="avatar">
+                    <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-name">Тарас:</div>
+                    <div class="review-text">Ціна підходить цьому товару.</div>
+                </div>
+                <div class="rating">
+                    <span class="star active" data-rating="1">★</span>
+                    <span class="star active" data-rating="2">★</span>
+                    <span class="star active" data-rating="3">★</span>
+                    <span class="star active" data-rating="4">★</span>
+                    <span class="star active" data-rating="5">★</span>
+                </div>
                 </div>
                 <div class="add-review-section">
-                    <div class="add-review-icon">
-                        <img src="../ware-card/img/edit-icon.png" alt="edit-icon" class="edit-icon">
+                <div class="add-review-icon">
+                    <img src="../ware-card/img/edit-icon.png" alt="edit-icon" class="edit-icon">
+                </div>
+                <div class="input-area">
+                    <div class="rating-section">
+                    <label class="rating-label">Оцініть товар:</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
                     </div>
-                    <div class="input-area">
-                        <div class="rating-section">
-                            <label class="rating-label">Оцініть товар:</label>
-                            <div class="star-rating" id="starRating">
-                                <span class="star" data-rating="1">★</span>
-                                <span class="star" data-rating="2">★</span>
-                                <span class="star" data-rating="3">★</span>
-                                <span class="star" data-rating="4">★</span>
-                                <span class="star" data-rating="5">★</span>
-                            </div>
-                        </div>
-                        <input type="text" class="review-input" id="reviewInput" placeholder="Написати відгук">
-                        <input type="text" class="review-input" id="nameInput" placeholder="Ваше ім'я" style="margin-top: 8px;">
                     </div>
-                    <button class="submit-btn" onclick="addReview()">Надіслати</button>
+                    <input type="text" class="review-input" id="reviewInput" placeholder="Написати відгук">
+                    <input type="text" class="review-input" id="nameInput" placeholder="Ваше ім'я" style="margin-top: 8px;">
+                </div>
+                <button class="submit-btn" onclick="addReview()">Надіслати</button>
                 </div>
             </div>
         </div>
