@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профіль</title>
+  <!-- Перевірте цей шлях -->
+  <link rel="stylesheet" href="../main-page/css/styles.css">
+  <style>
+    /* Тимчасові стилі, якщо CSS не підключається */
+    body { font-family: Arial, sans-serif; }
+    h1 { text-align: center; }
+    #orders-container { margin: 20px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ваші замовлення</h1>
+    <div id="orders-container"></div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ordersContainer = document.getElementById('orders-container');
+      const completedOrder = JSON.parse(localStorage.getItem('completedOrder')) || [];
+
+      if (completedOrder.length > 0) {
+        completedOrder.forEach(item => {
+          const orderDiv = document.createElement('div');
+          orderDiv.innerHTML = `
+            <h3>${item.name || 'Невідомий товар'}</h3>
+            <p>Кількість: ${item.quantity || 1}</p>
+            <p>Вартість: ${item.totalCost || 0} грн</p>
+            <hr>
+          `;
+          ordersContainer.appendChild(orderDiv);
+        });
+        localStorage.removeItem('completedOrder');
+      } else {
+        ordersContainer.innerHTML = '<p>Немає завершених замовлень.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

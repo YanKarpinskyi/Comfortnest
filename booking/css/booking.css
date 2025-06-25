@@ -1,0 +1,296 @@
+body {
+  background-color: #D9D9D9;
+}
+
+main {
+  width: 100vw;
+  height: auto;
+  margin: 17vh auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.booking-header-text {
+  font-size: 2vw;
+}
+
+.pros {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6DD88;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1vw;
+}
+
+.pros-header {
+  flex: 0 0 100%;
+  background-color: #63E9F3;
+  color: #565656;
+  width: 100%;
+  height: auto;
+  padding: 0 1vh 1.5vh;
+  vertical-align: top;
+  border-radius: 5px;
+}
+
+.pros-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pros-content p {
+  font-weight: bold;
+}
+
+.pros-first-lvl, .pros-second-lvl, .pros-third-lvl {
+  padding: 1vh 0;
+}
+
+.pros-return {
+  color: #44A2BC;
+}
+
+.pros-delivery {
+  color: #45C43E;
+}
+
+.pros-time {
+  color: #9C1919;
+}
+
+.pros-refund {
+  color: #0B7B0F;
+}
+
+.pros-delivery {
+  width: 18vw;
+}
+
+.payment-methods {
+  margin: 12vh auto;
+  text-align: center;
+  width: 20vw;
+  font-size: 1.2vw;
+}
+
+.payment-m-radios-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vh;
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.possible-banks {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 70%;
+  font-size: 1vw;
+}
+
+.possible-banks p {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 1.7vh;
+}
+
+.banks-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delivery-methods-wrapper {
+  margin: 12vh auto;
+  text-align: center;
+  width: 35%;
+  font-size: 1vw;
+}
+
+.delivery-methods-wrapper h3 {
+  font-size: 1.2vw;
+}
+
+.delivery-methods {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 2vh;
+}
+
+.delivery-post-radios {
+  text-align: start;
+}
+
+.post-variety {
+  margin-left: 10%;
+}
+
+.post-method {
+  display: flex;
+  align-items: center;
+  width: 19vw;
+  padding: 0.4vh;
+  gap: 5px;
+}
+
+.post-icon {
+  height: 1.3vh;
+  width: auto;
+}
+
+.delivery-specified {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.delivery-address-wrapper {
+  margin: 12vh auto;
+  text-align: left;
+  width: 30%;
+  font-size: 1.2vw;
+}
+
+.delivery-address-wrapper p {
+  text-align: center;
+}
+
+.select-wrapper {
+  font-size: 1.2vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr repeat(1fr, 2);
+  grid-template-rows: repeat(auto, 3);
+  grid-template-areas: "a b" "c d" "e f g h";
+  gap: 10px;
+}
+
+.select-wrapper select {
+  height: 100%;
+}
+
+.select-wrapper {
+  height: 100%;
+}
+
+#area {
+  width: 80%;
+}
+
+#city-label {
+  grid-area: "a";
+}
+
+#city-select {
+  grid-area: "b";
+  width: 80%;
+  margin-left: 5.2%;
+}
+
+#street-label {
+  grid-area: "c";
+}
+
+.street-select {
+  display: flex;
+  width: 100%;
+}
+
+#street-select {
+  grid-area: "d";
+  width: 100%;
+  margin-left: 7%;
+}
+
+.house-flat {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10%;
+}
+
+#house-label {
+  grid-area: "e";
+}
+
+#house-text {
+  grid-area: "f";
+  width: 25%;
+  height: 100%;
+}
+
+#flat-label {
+  grid-area: "g";
+}
+
+#flat-text {
+  grid-area: "h";
+  width: 27%;
+  height: 100%;
+}
+
+.st-house-select {
+  display: flex;
+  gap: 1vw;
+}
+
+#house-text {
+  width: 50%;
+}
+
+#flat-text {
+  width: 50%;
+}
+
+.make-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.7vw;
+  font-weight: 550;
+  background-color: #7c5409;
+  border: none;
+  border-radius: 1vh;
+  width: 22vw;
+  height: 9vh;
+  margin: 10vh auto 0;
+}
+
+.make-order:hover {
+  background-color: #614208;
+}
+
+.success-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.7vw;
+  font-weight: 550;
+  background-color: #83B477;
+  border: none;
+  border-radius: 1vh;
+  width: 42vw;
+  height: 29vh;
+  margin: 10vh auto 0;
+}
+
+.success-order p {
+  margin: 3vh;
+}
+
+/*# sourceMappingURL=booking.css.map */
