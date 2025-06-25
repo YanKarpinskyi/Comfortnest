@@ -1,0 +1,359 @@
+@use '../../main-page/css/variables' as v;
+@use '../../main-page/css/mixins' as m;
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:  17vh 0 7vh;
+  text-align: center;
+}
+
+.purchases-history {
+    margin-top: 6vh;
+}
+
+#cart-icon {
+  margin-top: 12px;
+}
+
+main {
+  width: 50vw;
+  height: auto;
+  margin: 17vh auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ware-card {
+  display: flex;
+  gap: 20px;
+  background-color: v.$ware-cart-fav-bg; 
+  padding: 20px;
+  border-radius: 15px;
+  margin: 4vh;
+}
+
+.date, .ware-info {
+    margin-top: 1.7vh;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 1.1vw;
+}
+
+.ware-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.ware-size-wrapper, .ware-color-wrapper, .ware-count-wrapper {
+  display: flex;
+  padding-top: 1vh;
+}
+
+.ware-size-content, .ware-color-content, .ware-count-content {
+  padding-left: 1vh;
+}
+
+.view-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$btn-color;
+  font-size: 1.7vw;
+  font-weight: 550;
+  background-color: v.$cta-bg;
+  // background-color: v.$to-cart-bg;
+  border: none;
+  border-radius: 1vh;
+  width: 22vw;
+  height: 9vh;
+  margin: 10vh auto 0;
+}
+
+.view-more:hover {
+  background-color: v.$cta-hover-bg;
+  // background-color: lighten(v.$to-cart-bg, 10%);
+}
+
+// .sending {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   height: auto;
+//   background-color: v.$sending-bg;
+//   margin-left: 17%;
+//   padding: 15px 0 15px 0;
+//   border-radius: 15px;
+// }
+
+// .agreement {
+//     width: 50%;
+// }
+
+// .sending-radio {
+//     display: flex;
+//     width: 50%;
+// }
+
+// .sending-variety {
+//     display: flex;
+// }
+
+// .sending-para:nth-of-type(n+2) .sending-radio {
+//     margin-top: 5px;
+// }
+
+// .agree {
+//     margin-left: 5%;
+// }
+
+// .disagreement {
+//     margin-left: 1%;
+// }
+
+// .post-variety {
+//     margin-left: 5%;
+// }
+
+.sending {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: v.$sending-bg;
+  margin-left: 17%;
+  padding: 15px 0;
+  border-radius: 15px;
+  margin: 8vh 35% 0;
+}
+
+.sending-heading {
+    margin: 0 auto;
+}
+
+.sending-variety {
+  display: flex;
+  justify-content: space-between; // Розподіляємо стовпчики
+  align-items: flex-start; // Вирівнюємо по верхній частині
+}
+
+.agreement {
+  width: 45%; // Зменшуємо, щоб залишити місце для другого стовпчика
+  display: flex;
+  flex-direction: column;
+}
+
+.agree {
+  margin-left: 5%;
+  margin-bottom: 5px; // Відступ знизу, щоб "Так:" було вище
+}
+
+.post-variety {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-variety-second {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sending-para {
+  display: flex;
+  align-items: center;
+  gap: 5px; // Відступ між елементами
+  margin-left: 7%;
+}
+
+.sending-radio {
+  margin: 0; // Скидаємо дефолтні відступи
+}
+
+.sending-para:nth-of-type(n+2) .sending-para {
+  margin-top: 5px; // Відступ між рядками в межах одного стовпчика
+}
+
+.disagreement {
+  width: 45%; // Другий стовпчик
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2%; // Відступ від першого стовпчика
+}
+
+.tosend-icon {
+  @include m.adaptive-img(1.3vh); // Якщо використовується mixin для зображень
+}
+
+.disagreement {
+    margin-top: 3%;
+}
+
+.decision {
+    margin: 12vh auto;
+    text-align: left;
+    width: 100%;
+    font-size: 1.2vw;
+    background-color: #DAB271;
+}
+
+.decision p{
+    text-align: center;
+}
+
+.select-wrapper {
+    font-size: 1.2vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(1fr, 2);
+    grid-template-rows: repeat(auto, 3);
+    grid-template-areas: 
+    "a b"
+    "c d"
+    "e f g h";
+    gap: 10px;
+    margin-left: 5%;
+}
+
+.select-wrapper select {
+    height: 100%;
+}
+
+.select-wrapper {
+    height: 100%;
+}
+
+#area {
+    width: 85.3%;
+}
+
+#city-label {
+    grid-area: "a";
+}
+
+#city-select {
+    grid-area: "b";
+    width: 85.3%;
+    margin-left: 3.4%;
+}
+
+#street-label {
+    grid-area: "c";
+}
+
+.street-select {
+    display: flex;
+    width: 100%;
+}
+
+#street-select {
+    grid-area: "d";
+    width: 100%;
+    margin-left: 3.2%;
+}
+
+.house-flat {
+    display: flex;
+    justify-content: space-around;
+}
+
+#house-label {
+    grid-area: "e";
+}
+
+#house-text {
+    grid-area: "f";
+    width: 25%;
+    height: 100%;
+}
+
+#flat-label {
+    grid-area: "g";
+}
+
+#flat-text {
+    grid-area: "h";
+    width: 27%;
+    height: 100%;
+}
+
+.st-house-select {
+    display: flex;
+    gap: 1vw;
+}
+
+#house-text {
+  width: 50%;  
+}
+
+#flat-text {
+  width: 50%;  
+}
+
+.bed-para-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.bed-para-heading {
+    margin-top: 5vh;
+}
+
+.bed-para {
+    display: flex;
+    justify-content: center;
+    margin: 3vh 0;
+}
+
+.bed-para-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2vh;
+}
+
+.bed-para-input {
+    width: 60%;
+    height: 2.5vh;
+}
+
+.save {
+    width: 5vw;
+    height: 4vh;
+    margin: 5vh auto;
+    background-color: #ccc6c6;
+    border: none;
+    font-size: 1vw;
+    font-weight: 500;
+    border-radius: 7px;
+}
+
+.save:hover {
+    background-color: #a5a4a4;
+    cursor: pointer;
+}
+
+.to-wares {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$btn-color;
+  font-size: 1.7vw;
+  font-weight: 550;
+  background-color: v.$cta-bg;
+//   background-color: v.$to-cart-bg;
+  border: none;
+  border-radius: 1vh;
+  width: 22vw;
+  height: 9vh;
+  margin: 10vh auto 0;
+}
+
+.to-wares:hover {
+  background-color: v.$cta-hover-bg;
+//   background-color: #614208;
+}

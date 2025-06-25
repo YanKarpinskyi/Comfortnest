@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   };
 
-  // Функція для заповнення select
   function populateSelect(select, options, defaultOption = 'Оберіть') {
     select.innerHTML = `<option value="">${defaultOption}</option>`;
     options.forEach(option => {
