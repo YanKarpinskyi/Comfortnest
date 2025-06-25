@@ -287,7 +287,8 @@ main {
   color: v.$btn-color;
   font-size: 2vw;
   font-weight: 700;
-  background-color: v.$to-cart-bg;
+  background-color: v.$cta-bg;
+  // background-color: v.$to-cart-bg;
   border: none;
   border-radius: 1vh;
   width: 16.2vw;
@@ -296,7 +297,8 @@ main {
 }
 
 .to-cart:hover {
-  background-color: lighten(v.$to-cart-bg, 10%);
+  background-color: v.$cta-hover-bg;
+  // background-color: lighten(v.$to-cart-bg, 10%);
 }
 
 .to-cart-icon {

@@ -1,3 +1,6 @@
+@use '../../main-page/css/variables' as v;
+@use '../../main-page/css/mixins' as m;
+
 #cart-icon {
   margin-top: 12px;
 }
@@ -13,12 +16,11 @@ main {
 .fav-header {
   display: flex;
   justify-content: center;
-  margin-bottom: 5vh;
+  margin-bottom:  5vh;
 }
 
 #fav-icon {
-  height: 4vh;
-  width: auto;
+  @include m.adaptive-img(4vh);
   margin-top: 0.5vh;
 }
 
@@ -39,7 +41,7 @@ main {
   height: 1.3vw;
 }
 
-.custom-checkbox input[type=checkbox] {
+.custom-checkbox input[type="checkbox"] {
   display: none;
 }
 
@@ -50,11 +52,13 @@ main {
   background-color: #eee;
   border: 2px solid #ccc;
   border-radius: 4px;
+//   margin-right: 8px;
+//   vertical-align: middle;
   position: relative;
   transition: 0.2s;
 }
 
-.custom-checkbox input[type=checkbox]:checked + .checkmark {
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
   background-color: #aa703a;
   border-color: #000000;
 }
@@ -71,7 +75,7 @@ main {
   transform: rotate(45deg);
 }
 
-.custom-checkbox input[type=checkbox]:checked + .checkmark::after {
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   display: block;
 }
 
@@ -84,7 +88,7 @@ main {
 .fav-item {
   display: flex;
   gap: 20px;
-  background-color: #DBDBDB;
+  background-color: v.$ware-cart-fav-bg; 
   padding: 20px;
   border-radius: 15px;
 }
@@ -102,19 +106,19 @@ main {
 .fav-info h2 {
   margin: 0 0 10px 0;
   font-size: 1.7vw;
-  color: #000000;
+  color: v.$text-color-def;
 }
 
 .fav-info p {
   margin: 15px 0;
   font-size: 0.9vw;
-  color: #000000;
+  color: v.$text-color-def;
 }
 
 .fav-info hr {
   margin: 5vh 0 2vh;
   font-size: 16px;
-  color: #000000;
+  color: v.$text-color-def;
 }
 
 #total-purchase-cost {
@@ -127,10 +131,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: v.$btn-color;
   font-size: 1.7vw;
   font-weight: 550;
-  background-color: #7c5409;
+  background-color: v.$cta-bg;
+//   background-color: v.$to-cart-bg;
   border: none;
   border-radius: 1vh;
   width: 22vw;
@@ -139,7 +144,6 @@ main {
 }
 
 .to-cart:hover {
-  background-color: #614208;
+  background-color: v.$cta-hover-bg;
+//   background-color: #614208;
 }
-
-/*# sourceMappingURL=fav.css.map */

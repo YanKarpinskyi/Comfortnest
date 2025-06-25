@@ -48,3 +48,46 @@ function openProductPage(card) {
     localStorage.setItem('product', JSON.stringify(productData));
     window.location.href = '../ware-card/ware-card.html';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    const favIcon = card.querySelector('.fav-icon-card');
+    favIcon.addEventListener('click', (e) => {
+      e.stopPropagation(); // Запобігаємо виклику openProductPage
+      const product = {
+        name: card.dataset.name,
+        img: card.dataset.img,
+        price: card.dataset.price,
+        style: card.dataset.style,
+        color: card.dataset.color,
+        materials: card.dataset.materials,
+        lengths: card.dataset.lengths.split(','),
+        widths: card.dataset.widths.split(','),
+        heights: card.dataset.heights.split(','),
+        type: card.dataset.type
+      };
+
+      let favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+      const existingItemIndex = favItems.findIndex(item =>
+        item.name === product.name &&
+        item.lengths.join() === product.lengths.join() &&
+        item.widths.join() === product.widths.join() &&
+        item.heights.join() === product.heights.join()
+      );
+
+      if (existingItemIndex === -1) {
+        favItems.push(product);
+        localStorage.setItem('favItems', JSON.stringify(favItems));
+        console.log('Added to favorites:', product);
+      } else {
+        console.log('Item already in favorites:', product.name);
+      }
+
+      // Надіслати повідомлення для оновлення fav.html
+      window.postMessage({ type: 'UPDATE_FAV' }, '*');
+      window.dispatchEvent(new Event('storage')); // Альтернативний тригер
+    });
+  });
+});

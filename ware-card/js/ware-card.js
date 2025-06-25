@@ -1178,10 +1178,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Initialize cart data as an array in localStorage if not present
   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-  // Display product details
   document.getElementById('product-name').textContent = product.name || 'Назва не вказана';
   document.getElementById('product-img').src = product.img;
   document.getElementById('product-style').textContent = product.style || 'Невідомо';
@@ -1194,14 +1192,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('product-name').style.marginBottom = '16px';
   }
 
-  // Select elements
   const lengthSelect = document.getElementById('length-select');
   const widthSelect = document.getElementById('width-select');
   const heightSelect = document.getElementById('height-select');
   const extraInfo = document.getElementById('extra-info');
   const toCartButton = document.querySelector('.to-cart');
 
-  // Populate select options
   const addOptions = (select, values) => {
     const valueArray = Array.isArray(values) ? values : (values ? values.split(',').map(v => v.trim()) : ['Невідомо']);
     select.innerHTML = '';

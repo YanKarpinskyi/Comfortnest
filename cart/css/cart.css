@@ -15,7 +15,7 @@ main {
 #cart-icon {
   height: 4vh;
   width: auto;
-  margin-top: 3px;
+  margin-top: 0.5vh;
 }
 
 .cart-header-text {
@@ -79,7 +79,7 @@ main {
   color: #ffffff;
   font-size: 1.7vw;
   font-weight: 550;
-  background-color: #3d3d3d;
+  background-color: #7c5409;
   border: none;
   border-radius: 1vh;
   width: 22vw;
@@ -88,7 +88,7 @@ main {
 }
 
 .make-order:hover {
-  background-color: rgb(86.5, 86.5, 86.5);
+  background-color: #614208;
 }
 
 /*# sourceMappingURL=cart.css.map */
