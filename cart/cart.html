@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,50 +17,19 @@
         <div class="header-nav">
             <img src="../main-page/img/sign-in-icon.png" alt="sign-in-icon" class="sign-in-icon">
             <p>Вхід</p>
-            <img src="../main-page/img/cart-icon.png" alt="cart-icon" class="cart-icon">
             <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="fav-icon">
             <img src="../main-page/img/lang-icon.png" alt="lang-icon" class="lang-icon">
         </div>
         <hr class="header-line">
     </header>
     <main>
-        <div class="main-content">
-            <div class="slider">
-                <img id="product-img">
-            </div>
-            <div class="ware-info">
-                <div class="ware-heading">
-                    <h1 id="product-name"></h1>
-                    <img src="../main-page/img/fav-icon.png" alt="fav-icon" class="ware-fav-icon">
-                </div>
-                <div class="ware-parametres">
-                    <p><strong>Стиль:</strong> <span id="product-style"></span></p>
-                    <p><strong>Колір:</strong> <span id="product-color"></span></p>
-                    <p><strong>Матеріали:</strong> <span id="product-materials"></span></p>
-                    <h2 id="product-price"></h2>
-                    <p id="sizes-heading"><strong>Розміри:</strong></p>
-                    <p id="extra-info"></p>
-                    <div class="sizes">
-                        <label for="length-select"><strong>Довжина:</strong></label>
-                        <select id="length-select"></select>
-                        <label for="width-select"><strong>Ширина:</strong></label>
-                        <select id="width-select"></select>
-                        <label for="height-select"><strong>Висота:</strong></label>
-                        <select id="height-select"></select>
-                    </div>
-                </div>
-            </div>
+        <div class="cart-header">
+            <img src="../main-page/img/cart-icon.png" alt="cart-icon" id="cart-icon">
+            <h1 class="cart-header-text">Кошик</h1>
         </div>
-        <div class="cart-item">
-            <img id="cart-product-img" src="" alt="Product Image" class="cart-product-img">
-            <div class="cart-info">
-                <h2 id="cart-product-name"></h2>
-                <p><strong>Розміри:</strong> <span id="cart-length"></span> x <span id="cart-width"></span> x <span id="cart-height"></span> см</p>
-                <p><strong>Кількість:</strong> <span id="cart-quantity"></span></p>
-                <p><strong>Загальна вартість:</strong> <span id="cart-total-cost"></span> грн</p>
-            </div>
-        </div>
-        <button class="to-cart">
+        <div id="cart-items-container"></div>
+        <div id="total-purchase-cost"></div>
+        <button class="make-order">
             Оформити замовлення
         </button>
     </main>
@@ -116,36 +85,6 @@
             <p class="footer-final-text">© 2025 Comfortnést. Усі права захищено.</p>
         </div>
     </footer>
-</body>
-<script src="./js/cart.js"></script>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кошик</title>
-  <link rel="stylesheet" href="./css/cart.css"> <!-- Adjust path to your CSS file -->
-</head>
-<body>
-  <main>
-    <div id="cart-items-container"></div>
-  </main>
 </body>
 <script src="./js/cart.js"></script>
 </html>

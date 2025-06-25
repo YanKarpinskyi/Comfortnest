@@ -1,37 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //   const cartItem = JSON.parse(localStorage.getItem('cartItem')) || {
-    //     quantity: 0,
-    //     length: '',
-    //     width: '',
-    //     height: '',
-    //     totalCost: 0,
-    //     img: '',
-    //     name: ''
-    //   };
+      function updateCartDisplay() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const container = document.getElementById('cart-items-container');
+        const totalCostElement = document.getElementById('total-purchase-cost');
 
-    //   document.getElementById('cart-product-img').src = cartItem.img || '../main-page/img/default.jpg';
-    //   document.getElementById('cart-product-name').textContent = cartItem.name || 'Назва не вказана';
-    //   document.getElementById('cart-length').textContent = cartItem.length || 'Невідомо';
-    //   document.getElementById('cart-width').textContent = cartItem.width || 'Невідомо';
-    //   document.getElementById('cart-height').textContent = cartItem.height || 'Невідомо';
-    //   document.getElementById('cart-quantity').textContent = cartItem.quantity || 0;
-    //   document.getElementById('cart-total-cost').textContent = cartItem.totalCost || 0;
+        if (!container || !totalCostElement) {
+          console.error('Container or total cost element not found! Container:', container, 'Total Cost Element:', totalCostElement);
+          return;
+        }
 
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      const container = document.getElementById('cart-items-container');
+        container.innerHTML = '';
+        totalCostElement.textContent = '';
 
-      cartItems.forEach(item => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-          <img src="${item.img || '../main-page/img/default.jpg'}" alt="Product Image" class="cart-product-img">
-          <div class="cart-info">
-            <h2>${item.name || 'Назва не вказана'}</h2>
-            <p><strong>Розміри:</strong> ${item.length || 'Невідомо'} x ${item.width || 'Невідомо'} x ${item.height || 'Невідомо'} см</p>
-            <p><strong>Кількість:</strong> ${item.quantity || 0}</p>
-            <p><strong>Загальна вартість:</strong> ${item.totalCost || 0} грн</p>
-          </div>
-        `;
-        container.appendChild(cartItem);
+        cartItems.forEach(item => {
+          const itemPrice = parseFloat(item.price) || 0;
+          const itemQuantity = parseInt(item.quantity) || 0;
+          const calculatedTotalCost = itemPrice * itemQuantity;
+          const displayTotalCost = isNaN(item.totalCost) || item.totalCost === 0 ? calculatedTotalCost : parseFloat(item.totalCost);
+
+          const cartItem = document.createElement('div');
+          cartItem.className = 'cart-item';
+          cartItem.innerHTML = `
+            <img src="${item.img || '../main-page/img/default.jpg'}" alt="Product Image" class="cart-product-img">
+            <div class="cart-info">
+              <h2>${item.name || 'Назва не вказана'}</h2>
+              <p><strong>Розміри:</strong> ${item.length || 'Невідомо'} x ${item.width || 'Невідомо'} x ${item.height || 'Невідомо'} см</p>
+              <p><strong>Кількість:</strong> ${itemQuantity}</p>
+              <hr>
+              <p><strong>Загальна вартість:</strong> ${isNaN(displayTotalCost) ? '0.00' : displayTotalCost.toFixed(2)} грн</p>
+            </div>
+          `;
+          container.appendChild(cartItem);
+        });
+
+        const totalPurchaseCost = cartItems.reduce((sum, item) => {
+          const itemPrice = parseFloat(item.price) || 0;
+          const itemQuantity = parseInt(item.quantity) || 0;
+          const itemTotalCost = itemPrice * itemQuantity;
+          return sum + (isNaN(item.totalCost) || item.totalCost === 0 ? itemTotalCost : parseFloat(item.totalCost));
+        }, 0);
+
+        totalCostElement.textContent = `Загальна вартість покупки: ${totalPurchaseCost.toFixed(2)} грн`;
+      }
+
+      updateCartDisplay();
+
+      window.addEventListener('message', (event) => {
+        if (event.data.type === 'UPDATE_CART') {
+          console.log('Received update cart message, refreshing display');
+          updateCartDisplay();
+        }
+      });
     });
-});
