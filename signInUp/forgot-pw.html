@@ -6,7 +6,7 @@
     <title>Comfortnést</title>
     <link rel="stylesheet" href="../main-css/main.css">
     <link rel="stylesheet" href="../main-page/css/main-page.css">
-    <link rel="stylesheet" href="./css/sign-in.css">
+    <link rel="stylesheet" href="./css/forgot-pw.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -24,22 +24,17 @@
         <hr class="header-line">
     </header>
     <main>
-        <div class="sign-in-input-wrapper">
-            <h1 class="sign-in-heading">Вхід</h1>
-            <div class="login-wrapper">
-                <label for="login">Логін</label>
-                <input type="text" name="login" id="login" class="inputs">
+        <div class="forgot-pw-input-wrapper">
+            <h1 class="forgot-pw-heading">Введіть номер телефону або електронну пошту для відновлення паролю</h1>
+            <div class="tel-wrapper">
+                <label for="tel">Номер телефону</label>
+                <input type="tel" name="tel" id="tel" class="inputs">
             </div>
-            <div class="password-wrapper">
-                <label for="password">Пароль</label>
-                <input type="password" name="password" id="password" class="inputs">
-                <a href="./forgot-pw.html" id="forgot-pw-link"><p class="forgot-pw">Забули пароль?</p></a>
+            <div class="email-wrapper">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" class="inputs">
             </div>
-            <button class="sign-in-btn" id="sign-in-btn" onclick="window.location.href='../main-page/index.html'">Увійти</button>
-            </div>
-            <div class="sign-up-input-wrapper">
-                <p>Не маєте аккаунту?</p>
-                <button class="sign-up-btn" onclick="window.location.href='./sign-up.html'">Зареєструватися</button>
+            <button class="sign-in-btn" id="sign-in-btn">Надіслати код</button>
             </div>
         </div>
     </main>
@@ -96,5 +91,5 @@
         </div>
     </footer>
 </body>
-<script src="./js/profile.js></script>
+<script src="./js/forgot-pw.js"></script>
 </html>

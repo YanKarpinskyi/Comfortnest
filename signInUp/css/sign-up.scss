@@ -11,14 +11,18 @@ main {
   margin: 15vh auto;
 }
 
-.registration-heading {
-    text-align: center;
-}
-
 .registration-input-wrapper {
     display: flex;
     flex-direction: column;
     margin-bottom: 5vh;
+}
+
+.registration-input-wrapper label {
+    font-size: 0.9vw;
+}
+
+.registration-heading {
+    text-align: center;
 }
 
 .surname-wrapper, .name-wrapper, .patronymic-wrapper, .birthday-wrapper, .tel-wrapper, .email-wrapper {
@@ -30,9 +34,9 @@ main {
 }
 
 .inputs {
-    width: 21vw;
-    height: 3vh;
-    border: none;
+  width: 23vw;
+  height: 3vh;
+  border: none;
 }
 
 .birthday-options select{

@@ -8,26 +8,28 @@ main {
   margin: 15vh auto;
 }
 
-.sign-in-input-wrapper {
+.forgot-pw-input-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5vh;
+  margin: 0 auto;
 }
 
-.sign-in-input-wrapper label {
+.forgot-pw-input-wrapper label {
   font-size: 1vw;
 }
 
-.sign-in-input-wrapper p {
+.forgot-pw-input-wrapper p {
   font-size: 0.8vw;
 }
 
-.sign-in-heading {
+.forgot-pw-heading {
   font-size: 1.7vw;
   text-align: center;
+  height: auto;
+  margin-bottom: 1vw;
 }
 
-.login-wrapper, .password-wrapper {
+.tel-wrapper, .email-wrapper {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -58,13 +60,7 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 3px;
-  margin-top: 10vw;
-}
-
-.sign-up-input-wrapper p {
-  font-size: 1.2vw;
-  color: #999999;
+  gap: 1px;
 }
 
 .sign-in-btn, .sign-up-btn {
@@ -88,16 +84,8 @@ main {
   background-color: #614208;
 }
 
-.sign-up-btn {
-  background-color: rgb(171.5488721805, 116.2105263158, 12.4511278195);
-}
-
-.sign-in-btn:hover, .sign-up-btn:hover {
-  background-color: rgb(144.1142857143, 98.0571428571, 11.8857142857);
-}
-
 #sign-in-btn {
   margin-top: 3vh;
 }
 
-/*# sourceMappingURL=sign-in.css.map */
+/*# sourceMappingURL=forgot-pw.css.map */
