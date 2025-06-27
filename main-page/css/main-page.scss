@@ -17,6 +17,12 @@ header {
     padding: 0 3vw;
 }
 
+.header-links {
+    text-decoration: none;
+    color: v.$text-color-def;
+    cursor: pointer;
+}
+
 .logo {
     @include m.adaptive-img(4vh);
 }
