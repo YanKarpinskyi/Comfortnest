@@ -1,8 +1,253 @@
 @use '../../main-page/css/variables' as v;
 @use '../../main-page/css/mixins' as m;
 
+// body {
+//     background-color: v.$additional-pages-bg;
+// }
+
+// main {
+//   width: 100vw;
+//   height: auto;
+//   margin: 17vh auto;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .booking-header {
+//   margin: 0 auto;
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom:  5vh;
+// }
+
+// .booking-header-text {
+//   font-size: 2vw;
+// }
+
+// .pros {
+//   display: flex;
+//   flex-direction: column;
+//   background-color: v.$pros-content-bg;
+//   margin: 0 auto;
+//   text-align: center;
+//   border-radius: 8px;
+//   font-size: 1vw;
+// }
+
+// .pros-header {
+//   flex: 0 0 100%;
+//   background-color: v.$pros-header-bg;
+//   color: v.$pros-header-color;
+//   width: 100%;
+//   height: auto;
+//   padding: 0 1vh 1.5vh;
+//   vertical-align: top;
+//   border-radius: 5px;
+// }
+
+// .pros-content {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .pros-content p {
+//   font-weight: bold;
+// }
+
+// .pros-first-lvl, .pros-second-lvl, .pros-third-lvl {
+//   padding: 1vh 0;
+// }
+
+// .pros-return {
+//   color: v.$pros-return-color;
+// }
+
+// .pros-delivery {
+//   color: v.$pros-delivery-color;
+// }
+
+// .pros-time {
+//   color: v.$pros-time-color;
+// }
+
+// .pros-refund {
+//   color: v.$pros-refund-color;
+// }
+
+// .pros-delivery {
+//   width: 18vw;
+// }
+
+// .payment-methods {
+//   margin: 12vh auto;
+//   text-align: center;
+//   width: 20vw;
+//   font-size: 1.2vw;
+// }
+
+// .payment-m-radios-wrapper {
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: 1vh;
+//   font-size: 1vw;
+//   font-weight: 500;
+// }
+
+// .possible-banks {
+//   display: flex;
+//   margin: 0 auto;
+//   flex-direction: column;
+//   width: 70%;
+//   font-size: 1vw;
+// }
+
+// .possible-banks p{
+//   display: flex;
+//   justify-content: start;
+//   margin-bottom: 1.7vh;
+// }
+
+// .banks-icons {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+// }
+
+// .delivery-methods-wrapper {
+//     margin: 12vh auto;
+//     text-align: center;
+//     width: 35%;
+//     font-size: 1vw;
+// }
+
+// .delivery-methods-wrapper h3{
+//     font-size: 1.2vw;
+// }
+
+// .delivery-methods {
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: flex-start;
+//     margin-top: 2vh;
+// }
+
+// .delivery-post-radios {
+//     text-align: start;
+// }
+
+// .post-variety {
+//     margin-left: 10%;
+// }
+
+// .post-method {
+//     display: flex;
+//     align-items: center;
+//     width: 19vw;
+//     padding: 0.4vh;
+//     gap: 5px;
+// }
+
+// .post-icon {
+//     @include m.adaptive-img(1.3vh)
+// }
+
+// .delivery-specified {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     gap: 5px;
+// }
+
+// .delivery-address-wrapper {
+//     margin: 12vh auto;
+//     text-align: left;
+//     width: 30%;
+//     font-size: 1.2vw;
+// }
+
+// .delivery-address-wrapper p{
+//     text-align: center;
+// }
+
+// .select-wrapper {
+//     font-size: 1.2vw;
+//     display: grid;
+//     grid-template-columns: 1fr 2fr repeat(1fr, 2);
+//     grid-template-rows: repeat(auto, 3);
+//     grid-template-areas: 
+//     "a b"
+//     "c d"
+//     "e f g h";
+//     gap: 10px;
+// }
+
+// .select-wrapper select {
+//     height: 100%;
+// }
+
+// .select-wrapper {
+//     height: 100%;
+// }
+
+// #area {
+//     width: 80%;
+// }
+
+// #city-label {
+//     grid-area: "a";
+// }
+
+// #city-select {
+//     grid-area: "b";
+//     width: 80%;
+//     margin-left: 5.2%;
+// }
+
+// #street-label {
+//     grid-area: "c";
+// }
+
+// .street-select {
+//     display: flex;
+//     width: 100%;
+// }
+
+// #street-select {
+//     grid-area: "d";
+//     width: 100%;
+//     margin-left: 7%;
+// }
+
+// .house-flat {
+//     display: flex;
+//     justify-content: space-around;
+//     margin-left: 10%;
+// }
+
+// #house-label {
+//     grid-area: "e";
+// }
+
+// #house-text {
+//     grid-area: "f";
+//     width: 25%;
+//     height: 100%;
+// }
+
+// #flat-label {
+//     grid-area: "g";
+// }
+
+// #flat-text {
+//     grid-area: "h";
+//     width: 27%;
+//     height: 100%;
+// }
+
 body {
-    background-color: v.$additional-pages-bg;
+  background-color: v.$additional-pages-bg;
 }
 
 main {
@@ -11,17 +256,49 @@ main {
   margin: 17vh auto;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1024px) {
+    margin: 15vh auto;
+  }
+
+  @media (max-width: 768px) {
+    margin: 12vh auto;
+  }
+
+  @media (max-width: 480px) {
+    margin: 10vh auto;
+  }
 }
 
 .booking-header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  margin-bottom:  5vh;
+  margin-bottom: 5vh;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3vh;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 2vh;
+  }
 }
 
 .booking-header-text {
   font-size: 2vw;
+
+  @media (max-width: 1024px) {
+    font-size: 1.8vw;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2vw;
+  }
 }
 
 .pros {
@@ -32,6 +309,22 @@ main {
   text-align: center;
   border-radius: 8px;
   font-size: 1vw;
+  width: 60%;
+
+  @media (max-width: 1024px) {
+    width: 70%;
+    font-size: 0.9vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    font-size: 0.8vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    font-size: 0.7vw;
+  }
 }
 
 .pros-header {
@@ -43,6 +336,14 @@ main {
   padding: 0 1vh 1.5vh;
   vertical-align: top;
   border-radius: 5px;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5vh 1vh;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0.3vh 0.7vh;
+  }
 }
 
 .pros-content {
@@ -58,6 +359,14 @@ main {
 
 .pros-first-lvl, .pros-second-lvl, .pros-third-lvl {
   padding: 1vh 0;
+
+  @media (max-width: 768px) {
+    padding: 0.8vh 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5vh 0;
+  }
 }
 
 .pros-return {
@@ -66,18 +375,19 @@ main {
 
 .pros-delivery {
   color: v.$pros-delivery-color;
-}
-
-.pros-time {
-  color: v.$pros-time-color;
-}
-
-.pros-refund {
-  color: v.$pros-refund-color;
-}
-
-.pros-delivery {
   width: 18vw;
+
+  @media (max-width: 1024px) {
+    width: 20vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 25vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 30vw;
+  }
 }
 
 .payment-methods {
@@ -85,6 +395,24 @@ main {
   text-align: center;
   width: 20vw;
   font-size: 1.2vw;
+
+  @media (max-width: 1024px) {
+    width: 25vw;
+    margin: 10vh auto;
+    font-size: 1.1vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 30vw;
+    margin: 8vh auto;
+    font-size: 1vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 40vw;
+    margin: 6vh auto;
+    font-size: 0.9vw;
+  }
 }
 
 .payment-m-radios-wrapper {
@@ -93,6 +421,16 @@ main {
   margin-top: 1vh;
   font-size: 1vw;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 0.9vw;
+    margin-top: 0.8vh;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8vw;
+    margin-top: 0.5vh;
+  }
 }
 
 .possible-banks {
@@ -101,149 +439,293 @@ main {
   flex-direction: column;
   width: 70%;
   font-size: 1vw;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    font-size: 0.9vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    font-size: 0.8vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    font-size: 0.7vw;
+  }
 }
 
-.possible-banks p{
+.possible-banks p {
   display: flex;
   justify-content: start;
   margin-bottom: 1.7vh;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.5vh;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 1vh;
+  }
 }
 
 .banks-icons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 5px;
+  }
+}
+
+.banks-icons img {
+  width: 6vw;
+  height: 9vh;
+
+
+  @media (max-width: 1024px) {
+    width: 15%;
+  }
+
+  @media (max-width: 768px) {
+    width: 20%;
+  }
+
+  @media (max-width: 480px) {
+    width: 25%;
+  }
 }
 
 .delivery-methods-wrapper {
-    margin: 12vh auto;
-    text-align: center;
-    width: 35%;
-    font-size: 1vw;
+  margin: 12vh auto;
+  text-align: center;
+  width: 35%;
+  font-size: 1vw;
+
+  @media (max-width: 1024px) {
+    width: 40%;
+    margin: 10vh auto;
+    font-size: 0.9vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 50%;
+    margin: 8vh auto;
+    font-size: 0.8vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 70%;
+    margin: 6vh auto;
+    font-size: 0.7vw;
+  }
 }
 
-.delivery-methods-wrapper h3{
-    font-size: 1.2vw;
+.delivery-methods-wrapper h3 {
+  font-size: 1.2vw;
+
+  @media (max-width: 1024px) {
+    font-size: 1.1vw;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9vw;
+  }
 }
 
 .delivery-methods {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin-top: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 2vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5vh;
+  }
 }
 
 .delivery-post-radios {
-    text-align: start;
+  text-align: start;
 }
 
 .post-variety {
-    margin-left: 10%;
+  margin-left: 10%;
+
+  @media (max-width: 768px) {
+    margin-left: 5%;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 2%;
+  }
 }
 
 .post-method {
-    display: flex;
-    align-items: center;
-    width: 19vw;
-    padding: 0.4vh;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  width: 19vw;
+  padding: 0.4vh;
+  gap: 5px;
+
+  @media (max-width: 1024px) {
+    width: 22vw;
+    padding: 0.3vh;
+  }
+
+  @media (max-width: 768px) {
+    width: 25vw;
+    padding: 0.2vh;
+  }
+
+  @media (max-width: 480px) {
+    width: 30vw;
+    padding: 0.1vh;
+  }
 }
 
 .post-icon {
-    @include m.adaptive-img(1.3vh)
+  @include m.adaptive-img(1.3vh);
+
+  @media (max-width: 1024px) {
+    @include m.adaptive-img(1.2vh);
+  }
+
+  @media (max-width: 768px) {
+    @include m.adaptive-img(1.1vh);
+  }
+
+  @media (max-width: 480px) {
+    @include m.adaptive-img(1vh);
+  }
 }
 
 .delivery-specified {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
 
 .delivery-address-wrapper {
-    margin: 12vh auto;
-    text-align: left;
-    width: 30%;
-    font-size: 1.2vw;
+  margin: 12vh auto;
+  text-align: left;
+  width: 30%;
+  font-size: 1.2vw;
+
+  @media (max-width: 1024px) {
+    width: 35%;
+    margin: 10vh auto;
+    font-size: 1.1vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 50%;
+    margin: 8vh auto;
+    font-size: 1vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 70%;
+    margin: 6vh auto;
+    font-size: 0.9vw;
+  }
 }
 
-.delivery-address-wrapper p{
-    text-align: center;
+.delivery-address-wrapper p {
+  text-align: center;
 }
 
 .select-wrapper {
-    font-size: 1.2vw;
-    display: grid;
-    grid-template-columns: 1fr 2fr repeat(1fr, 2);
-    grid-template-rows: repeat(auto, 3);
-    grid-template-areas: 
+  height: 100%;
+  font-size: 1.2vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr repeat(1fr, 2);
+  grid-template-rows: repeat(auto, 3);
+  grid-template-areas:
     "a b"
     "c d"
     "e f g h";
-    gap: 10px;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "f"
+      "g"
+      "h";
+    gap: 5px;
+  }
 }
 
 .select-wrapper select {
-    height: 100%;
-}
-
-.select-wrapper {
-    height: 100%;
+  height: 100%;
 }
 
 #area {
-    width: 80%;
+  width: 80%;
 }
 
 #city-label {
-    grid-area: "a";
+  grid-area: "a";
 }
 
 #city-select {
-    grid-area: "b";
-    width: 80%;
-    margin-left: 5.2%;
+  grid-area: "b";
+  width: 80%;
+  margin-left: 5.2%;
 }
 
 #street-label {
-    grid-area: "c";
+  grid-area: "c";
 }
 
 .street-select {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 #street-select {
-    grid-area: "d";
-    width: 100%;
-    margin-left: 7%;
+  grid-area: "d";
+  width: 100%;
+  margin-left: 7%;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    height: 50%;
+  }
 }
 
 .house-flat {
-    display: flex;
-    justify-content: space-around;
-    margin-left: 10%;
-}
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10%;
 
-#house-label {
-    grid-area: "e";
-}
-
-#house-text {
-    grid-area: "f";
-    width: 25%;
-    height: 100%;
-}
-
-#flat-label {
-    grid-area: "g";
-}
-
-#flat-text {
-    grid-area: "h";
-    width: 27%;
-    height: 100%;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .st-house-select {
@@ -251,12 +733,18 @@ main {
     gap: 1vw;
 }
 
+#house-label {
+  grid-area: "e";
+}
+
 #house-text {
-  width: 50%;  
+  width: 50%;
+  height: 100%;
 }
 
 #flat-text {
-  width: 50%;  
+  width: 50%;
+  height: 100%;
 }
 
 .make-order {
@@ -267,17 +755,36 @@ main {
   font-size: 1.7vw;
   font-weight: 550;
   background-color: v.$cta-bg;
-  // background-color: v.$to-cart-bg;
   border: none;
   border-radius: 1vh;
   width: 22vw;
   height: 9vh;
   margin: 10vh auto 0;
+
+  @media (max-width: 1024px) {
+    font-size: 1.5vw;
+    width: 25vw;
+    height: 8vh;
+    margin: 8vh auto 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.3vw;
+    width: 30vw;
+    height: 7vh;
+    margin: 6vh auto 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1vw;
+    width: 50vw;
+    height: 6vh;
+    margin: 4vh auto 0;
+  }
 }
 
 .make-order:hover {
   background-color: v.$cta-hover-bg;
-  // background-color: lighten(v.$to-cart-bg, 10%);
 }
 
 .success-order {
@@ -294,8 +801,38 @@ main {
   width: 42vw;
   height: 29vh;
   margin: 10vh auto 0;
+
+  @media (max-width: 1024px) {
+    width: 50vw;
+    height: 25vh;
+    font-size: 1.5vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 60vw;
+    height: 20vh;
+    font-size: 1.3vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 80vw;
+    height: 15vh;
+    font-size: 1.1vw;
+  }
 }
 
 .success-order p {
   margin: 3vh;
+
+  @media (max-width: 1024px) {
+    margin: 2.5vh;
+  }
+
+  @media (max-width: 768px) {
+    margin: 2vh;
+  }
+
+  @media (max-width: 480px) {
+    margin: 1.5vh;
+  }
 }
