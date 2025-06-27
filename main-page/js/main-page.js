@@ -23,9 +23,9 @@ favIcons.forEach(favIcon => {
     favIcon.addEventListener('click', (event) => {
       event.stopPropagation(); 
       if (favIcon.src.endsWith('fav-icon-default.png')) {
-        favIcon.src = './img/fav-icon.png';
+        favIcon.src = '/main-page/img/fav-icon.png';
       } else {
-        favIcon.src = './img/fav-icon-default.png';
+        favIcon.src = '/main-page/img/fav-icon-default.png';
       }
     });
 });

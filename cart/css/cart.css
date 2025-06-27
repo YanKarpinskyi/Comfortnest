@@ -85,6 +85,7 @@ main {
   width: 22vw;
   height: 9vh;
   margin: 10vh auto 0;
+  cursor: pointer;
 }
 
 .make-order:hover {

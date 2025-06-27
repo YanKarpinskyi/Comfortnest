@@ -720,6 +720,7 @@ main {
   width: 22vw;
   height: 9vh;
   margin: 10vh auto 0;
+  cursor: pointer;
 }
 @media (max-width: 1024px) {
   .to-wares {

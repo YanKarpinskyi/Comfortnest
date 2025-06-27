@@ -10,7 +10,7 @@ main {
   flex-direction: column;
 }
 
-.fav-header {
+.fav-heading {
   display: flex;
   justify-content: center;
   margin-bottom: 5vh;
@@ -26,6 +26,7 @@ main {
   margin-left: 1vw;
   font-size: 2vw;
   cursor: default;
+  justify-content: center;
 }
 
 .custom-checkbox {
@@ -136,6 +137,7 @@ main {
   width: 22vw;
   height: 9vh;
   margin: 10vh auto 0;
+  cursor: pointer;
 }
 
 .to-cart:hover {
