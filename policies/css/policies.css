@@ -1,3 +1,7 @@
+body {
+  background-color: #D9D9D9;
+}
+
 .policy-content {
     display: flex;
     flex-direction: column;

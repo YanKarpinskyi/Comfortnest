@@ -23,9 +23,9 @@ favIcons.forEach(favIcon => {
     favIcon.addEventListener('click', (event) => {
       event.stopPropagation(); 
       if (favIcon.src.endsWith('fav-icon-default.png')) {
-        favIcon.src = '/main-page/img/fav-icon.png';
+        favIcon.src = './main-page/img/fav-icon.png';
       } else {
-        favIcon.src = '/main-page/img/fav-icon-default.png';
+        favIcon.src = './main-page/img/fav-icon-default.png';
       }
     });
 });
@@ -46,7 +46,7 @@ function openProductPage(card) {
     };
 
     localStorage.setItem('product', JSON.stringify(productData));
-    window.location.href = '../ware-card/ware-card.html';
+    window.location.href = './ware-card/ware-card.html';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   cards.forEach(card => {
     const favIcon = card.querySelector('.fav-icon-card');
     favIcon.addEventListener('click', (e) => {
-      e.stopPropagation(); // Запобігаємо виклику openProductPage
+      e.stopPropagation(); 
       const product = {
         name: card.dataset.name,
         img: card.dataset.img,

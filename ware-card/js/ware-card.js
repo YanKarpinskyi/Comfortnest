@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       width: widthSelect.value,
       height: heightSelect.value,
       totalCost: price,
-      img: product.img || '../main-page/img/default.jpg',
+      img: product.img || './main-page/img/default.jpg',
       name: product.name,
       price: price
     };
@@ -192,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     indicators[currentSlide].classList.add('active');
   }
 
-  // Review functionality
   let currentRating = 0;
   let reviewCount = 3;
 
@@ -249,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     newReview.className = 'review-item';
     newReview.innerHTML = `
       <div class="avatar">
-        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+        <img src="./ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
       </div>
       <div class="review-content">
         <div class="reviewer-name">${reviewerName}:</div>
