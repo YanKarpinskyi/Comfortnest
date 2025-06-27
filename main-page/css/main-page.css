@@ -339,6 +339,11 @@ footer {
   margin-top: 3vh;
 }
 
+.footer-link {
+  text-decoration: none;
+  color: #000000;
+}
+
 .refs ul {
   list-style-type: square;
   color: #000000;
