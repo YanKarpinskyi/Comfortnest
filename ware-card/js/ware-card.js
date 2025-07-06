@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     newReview.className = 'review-item';
     newReview.innerHTML = `
       <div class="avatar">
-        <img src="./ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
+        <img src="../ware-card/img/avatar-icon.png" alt="avatar-icon" class="avatar-icon">
       </div>
       <div class="review-content">
         <div class="reviewer-name">${reviewerName}:</div>
