@@ -85,9 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Item already in favorites:', product.name);
       }
 
-      // Надіслати повідомлення для оновлення fav.html
       window.postMessage({ type: 'UPDATE_FAV' }, '*');
-      window.dispatchEvent(new Event('storage')); // Альтернативний тригер
+      window.dispatchEvent(new Event('storage'));
     });
   });
 });

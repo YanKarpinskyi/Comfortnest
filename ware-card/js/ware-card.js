@@ -139,11 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Cart items after update:', cartItems);
     alert(`Товар додано до кошика! Кількість: ${updatedItem.quantity}, Загальна сума: ${updatedItem.totalCost} грн`);
 
-    // Send message to update cart page
     window.postMessage({ type: 'UPDATE_CART' }, '*');
   });
 
-  // Slider functionality
   const slidesContainer = document.querySelector('.slider');
   const indicatorsContainer = document.querySelector('.indicators');
   let currentSlide = 0;

@@ -212,18 +212,18 @@ main {
   border: none;
   background: transparent;
   font-size: 15px;
-  color: #666; /* Fallback for v.$write-review-color */
+  color: #666;
   outline: none;
   font-family: inherit;
 }
 
 .review-input::placeholder {
-  color: #666; /* Fallback for v.$write-review-color */
+  color: #666;
 }
 
 .submit-btn {
-  background-color: #666; /* Fallback for v.$write-review-color */
-  color: #fff; /* Fallback for v.$btn-color */
+  background-color: #666;
+  color: #fff;
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
@@ -233,7 +233,7 @@ main {
 }
 
 .submit-btn:hover {
-  background-color: #555; /* Darken effect */
+  background-color: #555;
 }
 
 .rating-section {
@@ -266,12 +266,10 @@ main {
   color: #ffd700;
 }
 
-/* Restrict hover to interactive stars only */
 #starRating .interactive-star:hover {
   color: #ffd700;
 }
 
-/* Explicitly disable hover for review stars */
 .review-item .rating .star {
   cursor: default;
   color: #ddd;
@@ -288,17 +286,16 @@ main {
   font-size: 2vw;
   font-weight: 700;
   background-color: v.$cta-bg;
-  // background-color: v.$to-cart-bg;
   border: none;
   border-radius: 1vh;
   width: 16.2vw;
   height: 7vh;
   margin: 10vh auto 0;
+  cursor: pointer;
 }
 
 .to-cart:hover {
   background-color: v.$cta-hover-bg;
-  // background-color: lighten(v.$to-cart-bg, 10%);
 }
 
 .to-cart-icon {

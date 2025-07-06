@@ -74,7 +74,6 @@ main {
   font-size: 1.7vw;
   font-weight: 550;
   background-color: v.$cta-bg;
-  // background-color: v.$to-cart-bg;
   border: none;
   border-radius: 1vh;
   width: auto;
@@ -86,7 +85,6 @@ main {
 
 .sign-in-btn:hover, .sign-up-btn:hover {
   background-color: v.$cta-hover-bg;
-  // background-color: lighten(v.$to-cart-bg, 10%);
 }
 
 #sign-in-btn {
