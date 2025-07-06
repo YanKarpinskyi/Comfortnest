@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       width: widthSelect.value,
       height: heightSelect.value,
       totalCost: price,
-      img: product.img || './main-page/img/default.jpg',
+      img: product.img || '../main-page/img/default.jpg',
       name: product.name,
       price: price
     };
