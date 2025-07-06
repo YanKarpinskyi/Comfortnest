@@ -155,13 +155,27 @@ document.addEventListener('DOMContentLoaded', () => {
     indicatorsContainer.removeChild(indicatorsContainer.firstChild);
   }
 
-  const images = product.images || [product.img || '../main-page/img/default.jpg'];
+  // Визначаємо базовий шлях для GitHub Pages і локального тестування
+  const basePath = window.location.hostname === 'localhost' ? './' : '/';
+
+  // Обробляємо зображення, додаючи basePath до шляхів
+  const images = (product.images || product.img || `${basePath}main-page/img/default.jpg`)
+    .split(',')
+    .map(src => {
+      const cleanSrc = src.trim();
+      // Додаємо basePath до шляхів, якщо вони починаються з /main-page
+      return cleanSrc.startsWith('/main-page') ? `${basePath}${cleanSrc.replace(/^\//, '')}` : cleanSrc;
+    });
+
   images.forEach((src, index) => {
+    console.log('Image path:', src); // Дебаг для перевірки шляхів
     const img = document.createElement('img');
-    img.src = src.trim();
+    img.src = src;
     img.alt = `slide-${index}`;
     img.classList.add('slide');
     if (index === 0) img.classList.add('active');
+    img.onerror = () => console.error(`Failed to load image: ${src}`); // Лог помилки
+    img.onload = () => console.log(`Successfully loaded image: ${src}`); // Лог успіху
     slidesContainer.insertBefore(img, indicatorsContainer);
   });
 
