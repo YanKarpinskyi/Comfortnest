@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       width: widthSelect.value,
       height: heightSelect.value,
       totalCost: price,
-      img: product.img || './main-page/img/default.jpg',
+      img: product.img || '../main-page/img/default.jpg',
       name: product.name,
       price: price
     };
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     indicatorsContainer.removeChild(indicatorsContainer.firstChild);
   }
 
-  const images = product.images || [product.img || './main-page/img/default.jpg'];
+  const images = product.images || [product.img || '../main-page/img/default.jpg'];
   images.forEach((src, index) => {
     const img = document.createElement('img');
     img.src = src.trim();
