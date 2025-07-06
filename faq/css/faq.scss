@@ -5,6 +5,18 @@ body {
   background-color: v.$additional-pages-bg;
 }
 
+.faq-heading {
+  display: flex;
+  justify-content: center;
+  margin: 20vh 0 9vh;
+}
+
+.faq-heading-text {
+  font-size: 1.1vw;
+  cursor: default;
+  justify-content: center;
+}
+
 .reviews-wrapper {
   max-width: 80%;
   height: auto;
@@ -19,8 +31,8 @@ body {
 .question-item {
   border-radius: 12px;
   padding: 0.7vh;
-  display: flex; /* Змінено на flex для рядка */
-  flex-direction: column; /* Розташування в рядок */
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -33,13 +45,13 @@ body {
 
 .avatar {
   margin-left: 1vw;
-  flex-shrink: 0; /* Запобігаємо стисканню аватара */
+  flex-shrink: 0;
 }
 
 .avatar-icon {
-  width: 40px; /* Фіксована ширина для аватара, налаштуйте за потреби */
-  height: 40px; /* Фіксована висота для аватара */
-  object-fit: cover; /* Зберігаємо пропорції зображення */
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
 
 .question-content {
@@ -107,18 +119,18 @@ body {
   border: none;
   background: transparent;
   font-size: 15px;
-  color: v.$write-review-color; /* Fallback for v.$write-review-color */
+  color: v.$write-review-color;
   outline: none;
   font-family: inherit;
 }
 
 .review-input::placeholder {
-  color: v.$write-review-color; /* Fallback for v.$write-review-color */
+  color: v.$write-review-color;
 }
 
 .submit-btn {
-  background-color: v.$write-review-color; /* Fallback for v.$write-review-color */
-  color: #fff; /* Fallback for v.$btn-color */
+  background-color: v.$write-review-color;
+  color: #fff;
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
@@ -128,5 +140,5 @@ body {
 }
 
 .submit-btn:hover {
-  background-color: #555; /* Darken effect */
+  background-color: #555;
 }
